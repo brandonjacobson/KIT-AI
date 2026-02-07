@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import ChatMessage from './ChatMessage'
 import ChatInput from './ChatInput'
+import { useWebLLM } from '../hooks/useWebLLM'
 
 // Kit.ai Logo - "k" "i" [red box with white cross] "." "a" "i"
 function KitLogo({ onClick }) {
@@ -40,8 +41,15 @@ function KitLogo({ onClick }) {
 
 function Home() {
   const [messages, setMessages] = useState([])
+  const [streamingContent, setStreamingContent] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null)
+
+  const { status, progress, error, loadEngine, sendMessage, hasWebGPU } = useWebLLM()
+
+  useEffect(() => {
+    loadEngine()
+  }, [loadEngine])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -49,23 +57,61 @@ function Home() {
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages])
+  }, [messages, streamingContent])
 
   const handleSend = async (content) => {
+    if (status !== 'ready') return
+
     setMessages((prev) => [...prev, { role: 'user', content }])
     setIsLoading(true)
+    setStreamingContent('')
 
-    // Mock AI response for now - will be replaced with Gemini API later
-    await new Promise((resolve) => setTimeout(resolve, 800))
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: 'assistant',
-        content: 'This is a placeholder response. The Gemini API integration will be added by the backend team.',
-      },
-    ])
+    try {
+      const fullContent = await sendMessage(content, messages, (chunk) => {
+        setStreamingContent(chunk)
+      })
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant', content: fullContent },
+      ])
+    } catch (err) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: 'assistant',
+          content: `Error: ${err?.message || 'Failed to get response.'}`,
+        },
+      ])
+    } finally {
+      setStreamingContent('')
+      setIsLoading(false)
+    }
+  }
 
-    setIsLoading(false)
+  const chatReady = status === 'ready'
+  const chatDisabled = isLoading || !chatReady
+
+  if (status === 'error') {
+    return (
+      <div className="flex flex-col h-screen bg-slate-50">
+        <div className="shrink-0 px-4 py-3 bg-white border-b border-slate-200">
+          <h1 className="text-xl font-semibold text-slate-900 text-center">KIT AI</h1>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center p-6">
+          <div className="max-w-md w-full bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+            <h2 className="text-lg font-semibold text-amber-800 mb-2">
+              WebGPU Not Supported
+            </h2>
+            <p className="text-slate-700 mb-4">
+              {error?.message || 'Your browser does not support WebGPU.'}
+            </p>
+            <p className="text-sm text-slate-600">
+              Please use Chrome 113+, Edge 113+, Safari 26+, or Firefox 141+ for the best experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   const handleGoHome = () => {
@@ -142,7 +188,19 @@ function Home() {
         {/* Chat Area */}
         <div className="flex-1 flex items-center justify-center p-6">
           <div className="w-full max-w-3xl">
-            {messages.length === 0 ? (
+            {status === 'loading' && (
+              <div className="flex flex-col items-center justify-center py-12">
+                <p className="text-gray-600 mb-4 text-lg font-medium">Loading model...</p>
+                <div className="w-full max-w-xs h-2 bg-white/50 backdrop-blur-xl rounded-full overflow-hidden border border-white/40">
+                  <div
+                    className="h-full bg-gradient-to-r from-kit-red to-kit-teal transition-all duration-300"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+                <p className="text-sm text-gray-500 mt-2">{Math.round(progress)}%</p>
+              </div>
+            )}
+            {status === 'ready' && messages.length === 0 ? (
               <div className="flex flex-col items-center">
                 {/* Main heading - NO backdrop box, bigger text */}
                 <h1 className="text-6xl font-black text-gray-800 mb-10 tracking-tight">
@@ -241,7 +299,10 @@ function Home() {
                 {messages.map((msg, i) => (
                   <ChatMessage key={i} role={msg.role} content={msg.content} />
                 ))}
-                {isLoading && (
+                {streamingContent && (
+                  <ChatMessage role="assistant" content={streamingContent} />
+                )}
+                {isLoading && !streamingContent && (
                   <div className="flex justify-start">
                     <div className="relative">
                       <div className="absolute inset-0 bg-white/50 backdrop-blur-2xl rounded-2xl border border-white/50"></div>
@@ -264,7 +325,11 @@ function Home() {
 
         {/* Chat Input - fixed at bottom */}
         <div className="shrink-0">
-          <ChatInput onSend={handleSend} disabled={isLoading} />
+          <ChatInput
+            onSend={handleSend}
+            disabled={chatDisabled}
+            placeholder={status === 'loading' ? 'Loading model...' : undefined}
+          />
         </div>
       </div>
     </div>
