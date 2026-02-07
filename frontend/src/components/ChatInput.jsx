@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function ChatInput({ onSend, disabled }) {
+function ChatInput({ onSend, disabled, placeholder }) {
   const [message, setMessage] = useState('')
 
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ function ChatInput({ onSend, disabled }) {
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Describe your symptoms or ask a question..."
+        placeholder={placeholder || "Describe your symptoms or ask a question..."}
         disabled={disabled}
         className="flex-1 min-h-[44px] px-4 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base text-slate-900 placeholder-slate-500"
       />
