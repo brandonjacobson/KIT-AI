@@ -57,8 +57,14 @@ KIT AI is built to:
 ### Backend (Online Only)
 - Node.js + Express
 - MongoDB Atlas for medical content
+- Gemini API for knowledge generation and translation
+- **Background job system** for long-running tasks (training, translation)
 - `GET /api/medical` — frontend fetches and caches when online
 - `POST /api/medical` — webscraper or ingest script updates content
+- `POST /jobs/train` — trigger background training job for curriculum
+- `POST /jobs/translate` — trigger background translation job (19 languages)
+
+See [backend/BACKGROUND_JOBS.md](./backend/BACKGROUND_JOBS.md) for details on the background job system.
 
 ---
 
