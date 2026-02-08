@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-02-08T06:03:45.285Z",
+  "updated_at": "2026-02-08T06:06:12.593Z",
   "guidelines": [
     {
       "id": "Frostbite",
@@ -1257,6 +1257,251 @@
         "Coughing, especially if producing frothy or pink sputum.",
         "Confusion, disorientation, or changes in mental state.",
         "Difficulty walking or loss of coordination."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Lightning Strike",
+      "keywords": [
+        "lightning",
+        "strike",
+        "electrical injury",
+        "burn",
+        "seizure",
+        "cardiac arrest",
+        "unresponsive"
+      ],
+      "steps": [
+        "Ensure safety: Make sure the area is safe from further lightning strikes before approaching the person.",
+        "Check responsiveness: Gently tap the person and ask loudly if they are okay. If there is no response, call for emergency services immediately if available.",
+        "Assess breathing and circulation: Check for breathing and a pulse. If the person is not breathing or does not have a pulse, begin CPR immediately if you are trained to do so.",
+        "Treat burns: Lightning strikes can cause burns. Cool the burn with cool (not cold) water for several minutes. Cover the burn with a clean, dry dressing.",
+        "Look for other injuries: Check for fractures, dislocations, and other trauma. Stabilize any suspected fractures or dislocations.",
+        "Provide reassurance: If the person is conscious, reassure them and keep them calm while waiting for medical help to arrive."
+      ],
+      "red_flags": [
+        "Unconsciousness or unresponsiveness",
+        "Difficulty breathing or absence of breathing",
+        "Seizures",
+        "Cardiac arrest (no pulse)",
+        "Severe burns",
+        "Confusion or disorientation",
+        "Neurological symptoms (e.g., weakness, numbness, paralysis)",
+        "Any signs of trauma or injury"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Drowning (near-drowning)",
+      "keywords": [
+        "drowning",
+        "near drowning",
+        "submersion",
+        "water rescue",
+        "suffocation",
+        "asphyxiation"
+      ],
+      "steps": [
+        "Ensure your own safety first before attempting a rescue.",
+        "Remove the person from the water if it is safe to do so.",
+        "Check for responsiveness. If the person is unresponsive, call for emergency medical help immediately.",
+        "Check for breathing. If the person is not breathing, begin rescue breathing. Give two initial breaths, then check for signs of life.",
+        "If there are no signs of life (breathing, coughing, or movement), begin chest compressions. Push hard and fast in the center of the chest.",
+        "Continue rescue breathing and chest compressions until emergency services arrive or the person shows signs of life.",
+        "If the person is breathing, place them in the recovery position (on their side) to help prevent aspiration.",
+        "Keep the person warm and monitor their breathing until medical help arrives."
+      ],
+      "red_flags": [
+        "Unresponsiveness",
+        "Difficulty breathing or no breathing",
+        "Persistent coughing",
+        "Chest pain",
+        "Confusion or altered mental state",
+        "Blue lips or skin (cyanosis)",
+        "Seizures",
+        "Vomiting"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Water Aspiration",
+      "keywords": [
+        "water aspiration",
+        "drowning",
+        "near drowning",
+        "water in lungs",
+        "choking on water",
+        "difficulty breathing after swimming",
+        "coughing after swimming"
+      ],
+      "steps": [
+        "If the person is conscious and coughing, encourage them to continue coughing to clear the airway.",
+        "Monitor the person's breathing and responsiveness.",
+        "If the person is having difficulty breathing, call for emergency medical help immediately.",
+        "If the person is unconscious and not breathing, begin CPR if you are trained to do so.",
+        "Keep the person warm and calm while waiting for medical assistance."
+      ],
+      "red_flags": [
+        "Persistent coughing or wheezing",
+        "Difficulty breathing or shortness of breath",
+        "Chest pain",
+        "Bluish skin (cyanosis)",
+        "Loss of consciousness",
+        "Confusion or altered mental state",
+        "Foam coming from the mouth or nose"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Hypothermia After Water Exposure",
+      "keywords": [
+        "hypothermia",
+        "cold water",
+        "water exposure",
+        "shivering",
+        "confusion",
+        "drowning",
+        "first aid",
+        "emergency",
+        "body temperature",
+        "after swimming",
+        "cold shock"
+      ],
+      "steps": [
+        "Move the person to a warm, dry place immediately to prevent further heat loss.",
+        "Remove any wet clothing carefully. Replace with dry clothes, blankets, towels, or anything available to insulate them.",
+        "If possible, warm the person gradually. Use blankets, body heat, or a warm (not hot) compress to the neck, armpits, and groin.",
+        "Offer warm, non-alcoholic, and non-caffeinated drinks if the person is conscious and able to swallow.",
+        "Monitor the person's breathing and level of consciousness. Be prepared to administer CPR if necessary.",
+        "Keep the person still and handle them gently. Avoid massaging or rubbing their limbs, as this can cause further complications."
+      ],
+      "red_flags": [
+        "Persistent shivering or shivering that stops suddenly",
+        "Confusion, disorientation, or slurred speech",
+        "Loss of coordination or difficulty walking",
+        "Unconsciousness or unresponsiveness",
+        "Slow, shallow breathing or difficulty breathing",
+        "Weak pulse",
+        "Very cold skin that is blue or pale"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Bee Sting",
+      "keywords": [
+        "bee sting",
+        "insect sting",
+        "sting",
+        "bee",
+        "swelling",
+        "itch"
+      ],
+      "steps": [
+        "If the stinger is visible, gently scrape it away with a fingernail or a credit card edge. Avoid squeezing the stinger, as this may release more venom.",
+        "Wash the area with soap and water.",
+        "Apply a cold compress to the sting site to reduce swelling and pain.",
+        "Consider taking an over-the-counter antihistamine to help relieve itching and swelling. Follow the product instructions for dosage.",
+        "Monitor for signs of an allergic reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the face, lips, tongue, or throat",
+        "Hives or rash spreading beyond the sting site",
+        "Dizziness or fainting",
+        "Rapid heartbeat",
+        "Nausea, vomiting, or diarrhea"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Snake Bite",
+      "keywords": [
+        "snakebite",
+        "snake bite",
+        "venomous snake",
+        "poisonous snake",
+        "snake attack"
+      ],
+      "steps": [
+        "Call for emergency medical assistance immediately if possible.",
+        "Keep the person calm and still to slow the spread of venom.",
+        "Immobilize the bitten limb and keep it below heart level, if possible.",
+        "Remove any rings, watches, or restrictive clothing from the affected limb.",
+        "If possible and safe, note the snake's appearance (color, size, pattern) for identification, but do NOT try to catch or kill it.",
+        "Clean the wound gently with soap and water if available.",
+        "Cover the wound with a clean, dry dressing.",
+        "Monitor the person's breathing and circulation."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Changes in heart rate",
+        "Swelling around the bite area",
+        "Severe pain",
+        "Nausea or vomiting",
+        "Blurred vision",
+        "Muscle weakness or paralysis",
+        "Bleeding or clotting problems",
+        "Signs of allergic reaction (hives, itching, swelling of the face, tongue, or throat)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Spider Bite",
+      "keywords": [
+        "spider bite",
+        "bite",
+        "spider",
+        "arachnid",
+        "first aid",
+        "insect bite"
+      ],
+      "steps": [
+        "Wash the bite area gently with soap and water.",
+        "Apply a cold compress or ice pack to the bite for 10 minutes on and 10 minutes off to help reduce pain and swelling.",
+        "Elevate the affected area, if possible, to help minimize swelling.",
+        "Monitor for signs of infection or a severe reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Severe pain",
+        "Muscle cramping or spasms",
+        "Numbness or tingling",
+        "Spreading redness or swelling",
+        "Blisters",
+        "Fever",
+        "Nausea or vomiting",
+        "Dizziness",
+        "A bite from a known dangerous spider (e.g., black widow, brown recluse)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Tick Bite",
+      "keywords": [
+        "tick",
+        "bite",
+        "tick bite",
+        "remove tick",
+        "Lyme disease",
+        "insect bite"
+      ],
+      "steps": [
+        "Use fine-tipped tweezers to grasp the tick as close to the skin's surface as possible.",
+        "Pull the tick straight out with steady, even pressure. Do not twist or jerk the tick, as this can cause the mouthparts to break off and remain in the skin.",
+        "If the mouthparts break off and remain in the skin, try to remove them with tweezers. If you cannot remove them easily, leave them alone and let the skin heal.",
+        "After removing the tick, thoroughly clean the bite area and your hands with soap and water, rubbing alcohol, or an antiseptic.",
+        "Dispose of the tick by placing it in a sealed bag or container, wrapping it tightly in tape, or flushing it down the toilet.",
+        "Monitor the bite area for any signs of infection or rash. "
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "A severe headache",
+        "A rash, especially a bullseye-shaped rash",
+        "Fever",
+        "Joint pain",
+        "Muscle aches",
+        "Swelling around the bite area",
+        "Signs of infection at the bite site (increased pain, redness, pus)"
       ],
       "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
     }
