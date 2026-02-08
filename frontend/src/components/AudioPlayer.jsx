@@ -35,6 +35,33 @@ function AudioPlayer({ messageContent, messageId }) {
     }
   }, [speed])
 
+  /**
+   * Fall back to the browser's built-in Web Speech API.
+   * Used when offline OR when ElevenLabs is unavailable (e.g. no backend on Vercel).
+   */
+  const useBrowserFallback = async () => {
+    if (!hasBrowserTTS) {
+      setErrorMessage('No TTS available')
+      setState('error')
+      return
+    }
+
+    setState('playing')
+    setUsingBrowserTTS(true)
+    setErrorMessage('')
+
+    try {
+      await speakBrowser(messageContent)
+      setState('idle')
+      setUsingBrowserTTS(false)
+    } catch (error) {
+      console.error('Browser TTS error:', error)
+      setErrorMessage(error.message || 'Browser TTS failed')
+      setState('error')
+      setUsingBrowserTTS(false)
+    }
+  }
+
   const handleGenerate = async () => {
     if (!ttsEnabled) {
       setErrorMessage('TTS is disabled')
@@ -42,32 +69,12 @@ function AudioPlayer({ messageContent, messageId }) {
       return
     }
 
-    // If offline, use browser TTS fallback
+    // If offline, go straight to browser TTS
     if (!isOnline) {
-      if (!hasBrowserTTS) {
-        setErrorMessage('Offline - no TTS available')
-        setState('error')
-        return
-      }
-
-      setState('playing')
-      setUsingBrowserTTS(true)
-      setErrorMessage('')
-
-      try {
-        await speakBrowser(messageContent)
-        setState('idle')
-        setUsingBrowserTTS(false)
-      } catch (error) {
-        console.error('Browser TTS error:', error)
-        setErrorMessage(error.message || 'Browser TTS failed')
-        setState('error')
-        setUsingBrowserTTS(false)
-      }
-      return
+      return useBrowserFallback()
     }
 
-    // Online: use ElevenLabs
+    // Online: try ElevenLabs first, fall back to browser TTS on failure
     setState('generating')
     setErrorMessage('')
     setUsingBrowserTTS(false)
@@ -114,9 +121,9 @@ function AudioPlayer({ messageContent, messageId }) {
         // Browser may block auto-play, user can click to play
       })
     } catch (error) {
-      console.error('Error generating audio:', error)
-      setErrorMessage(error.message || 'Generation failed')
-      setState('error')
+      // ElevenLabs failed (no backend, network error, etc.) — fall back to browser TTS
+      console.warn('ElevenLabs TTS failed, falling back to browser voice:', error.message)
+      return useBrowserFallback()
     }
   }
 
