@@ -42,7 +42,9 @@ export function useWebLLM() {
 
   const sendMessage = useCallback(
     async (userContent, chatHistory, onStream) => {
-      if (status !== 'ready') return
+      if (status !== 'ready') {
+        throw new Error('AI model is still loading. Please wait...')
+      }
 
       const medicalContext = await getMedicalContext()
       const systemContent = `${BASE_DISCLAIMER}\n\nMedical context:\n${medicalContext}`
