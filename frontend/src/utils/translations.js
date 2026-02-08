@@ -69,6 +69,10 @@ export const translations = {
     voiceDaniel: 'Deep, authoritative British male',
     voiceCharlotte: 'Warm, natural Swedish-English female',
     voiceLily: 'Soft, gentle British female',
+
+    // Offline
+    offlineMode: 'Offline \u2014 using browser voice, updates paused',
+    ttsBrowserVoice: 'Play with browser voice (offline)',
   },
 
   es: {
@@ -134,6 +138,10 @@ export const translations = {
     voiceDaniel: 'Profunda, autoritaria británica masculina',
     voiceCharlotte: 'Cálida, natural sueco-inglesa femenina',
     voiceLily: 'Suave, gentil británica femenina',
+
+    // Offline
+    offlineMode: 'Sin conexión \u2014 usando voz del navegador, actualizaciones pausadas',
+    ttsBrowserVoice: 'Reproducir con voz del navegador (sin conexión)',
   },
 
   fr: {
@@ -199,6 +207,10 @@ export const translations = {
     voiceDaniel: 'Profonde, autoritaire britannique masculin',
     voiceCharlotte: 'Chaleureuse, naturelle suédo-anglaise féminine',
     voiceLily: 'Douce, délicate britannique féminine',
+
+    // Offline
+    offlineMode: 'Hors ligne \u2014 utilisation de la voix du navigateur, mises à jour en pause',
+    ttsBrowserVoice: 'Lire avec la voix du navigateur (hors ligne)',
   },
 
   de: {
@@ -264,6 +276,10 @@ export const translations = {
     voiceDaniel: 'Tief, autoritär britisch männlich',
     voiceCharlotte: 'Warm, natürlich schwedisch-englisch weiblich',
     voiceLily: 'Sanft, zart britisch weiblich',
+
+    // Offline
+    offlineMode: 'Offline \u2014 Browser-Stimme wird verwendet, Aktualisierungen pausiert',
+    ttsBrowserVoice: 'Mit Browser-Stimme abspielen (offline)',
   },
 
   zh: {
@@ -329,6 +345,10 @@ export const translations = {
     voiceDaniel: '深沉、权威的英国男性',
     voiceCharlotte: '温暖、自然的瑞典英语女性',
     voiceLily: '柔和、温柔的英国女性',
+
+    // Offline
+    offlineMode: '离线 \u2014 使用浏览器语音，更新已暂停',
+    ttsBrowserVoice: '使用浏览器语音播放（离线）',
   },
 
   ja: {
@@ -394,6 +414,10 @@ export const translations = {
     voiceDaniel: '深い、権威的なイギリス男性',
     voiceCharlotte: '温かい、自然なスウェーデン英語女性',
     voiceLily: '柔らかい、優しいイギリス女性',
+
+    // Offline
+    offlineMode: 'オフライン \u2014 ブラウザ音声を使用中、更新は一時停止',
+    ttsBrowserVoice: 'ブラウザ音声で再生（オフライン）',
   },
 }
 

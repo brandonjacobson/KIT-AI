@@ -33,7 +33,7 @@ export default function ConversationItem({ conversation, onSelect, onDelete, col
   return (
     <div
       className={`
-        group p-5 rounded-3xl cursor-pointer text-left shadow-sm
+        group p-4 md:p-5 rounded-3xl cursor-pointer text-left shadow-sm
         hover:-translate-y-1 hover:shadow-lg transition-all duration-300 animate-slideIn
         ${bgClass}
       `}
@@ -66,20 +66,21 @@ export default function ConversationItem({ conversation, onSelect, onDelete, col
       ) : (
         <>
           <div className="flex items-center gap-3 mb-3">
-            <span className="font-bold text-gray-800 dark:text-kit-dark-text text-lg transition-colors duration-300 flex-1 truncate">
+            <span className="font-bold text-gray-800 dark:text-kit-dark-text text-base md:text-lg transition-colors duration-300 flex-1 truncate">
               {conversation.title || 'New Chat'}
             </span>
-            {isHovered && (
-              <button
-                onClick={handleDelete}
-                className="flex-shrink-0 p-1.5 text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-md"
-                title="Delete conversation"
-              >
-                <Trash2 size={18} />
-              </button>
-            )}
+            {/* Always visible on mobile (no hover), hover-only on desktop */}
+            <button
+              onClick={handleDelete}
+              className={`flex-shrink-0 p-1.5 text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors rounded-md ${
+                isHovered ? 'md:opacity-100' : 'md:opacity-0'
+              } md:group-hover:opacity-100`}
+              title="Delete conversation"
+            >
+              <Trash2 size={18} />
+            </button>
           </div>
-          <p className="text-base text-gray-600 dark:text-kit-dark-text-muted transition-colors duration-300">
+          <p className="text-sm md:text-base text-gray-600 dark:text-kit-dark-text-muted transition-colors duration-300">
             {relativeTime} • {messageCount} {messageCount === 1 ? 'message' : 'messages'}
           </p>
         </>

@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt', 'pwa-192x192.png', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.svg', 'robots.txt', 'pwa-192x192.png', 'apple-touch-icon.png', 'fonts/*.woff2', 'medical-knowledge.json'],
       manifest: {
         name: 'KIT AI',
         short_name: 'KIT AI',

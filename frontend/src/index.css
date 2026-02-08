@@ -1,3 +1,40 @@
+/* Self-hosted fonts for offline support */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/nunito-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/nunito-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/varela-round-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/varela-round-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +42,16 @@
 @layer base {
   body {
     @apply font-sans antialiased;
+    /* Prevent pull-to-refresh and overscroll bounce on mobile */
+    overscroll-behavior: none;
+  }
+
+  /* Safe area padding for notched devices (iPhone X+) */
+  :root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+    --sar: env(safe-area-inset-right, 0px);
   }
 
   /* Disable transitions for motion-reduced users */
@@ -13,6 +60,24 @@
       transition: none !important;
       animation: none !important;
     }
+  }
+}
+
+@layer components {
+  /* Mobile sidebar overlay backdrop */
+  .mobile-sidebar-backdrop {
+    @apply fixed inset-0 bg-black/40 z-40 transition-opacity duration-300;
+  }
+
+  /* Mobile sidebar slide-in */
+  .mobile-sidebar {
+    @apply fixed inset-y-0 left-0 z-50 w-72 transform transition-transform duration-300 ease-out;
+  }
+  .mobile-sidebar.open {
+    @apply translate-x-0;
+  }
+  .mobile-sidebar.closed {
+    @apply -translate-x-full;
   }
 }
 

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import {
   getMedicalContext,
   fetchAndUpdate,
+  ensureMedicalData,
 } from '../services/medicalCacheService'
 
 export function useMedicalCache() {
@@ -29,10 +30,12 @@ export function useMedicalCache() {
     }
   }, [loadContext])
 
+  // On mount: ensure IndexedDB is populated from static file (works offline too)
   useEffect(() => {
-    loadContext()
+    ensureMedicalData().then(loadContext)
   }, [loadContext])
 
+  // If online, also sync from backend/remote sources
   useEffect(() => {
     if (navigator.onLine) {
       fetchAndUpdate().then(loadContext)

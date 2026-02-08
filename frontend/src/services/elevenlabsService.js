@@ -10,6 +10,70 @@ export function isOnline() {
 }
 
 /**
+ * Check if the browser supports the Web Speech API
+ * @returns {boolean} True if supported
+ */
+export function hasBrowserTTS() {
+  return 'speechSynthesis' in window
+}
+
+/**
+ * Speak text using the browser's built-in Web Speech API (offline fallback)
+ * Returns a promise that resolves when speech ends, or rejects on error.
+ * @param {string} text - Text to speak
+ * @param {string} languageCode - ISO 639-1 language code
+ * @param {number} rate - Playback speed (0.5 - 2.0)
+ * @returns {Promise<SpeechSynthesisUtterance>} The utterance (for pause/resume control)
+ */
+export function speakWithBrowserTTS(text, languageCode = 'en', rate = 1.0) {
+  return new Promise((resolve, reject) => {
+    if (!hasBrowserTTS()) {
+      reject(new Error('Browser does not support speech synthesis'))
+      return
+    }
+
+    // Cancel any ongoing speech
+    window.speechSynthesis.cancel()
+
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.lang = languageCode
+    utterance.rate = rate
+
+    // Try to pick a voice matching the language
+    const voices = window.speechSynthesis.getVoices()
+    const match = voices.find(v => v.lang.startsWith(languageCode)) ||
+                  voices.find(v => v.lang.startsWith('en'))
+    if (match) {
+      utterance.voice = match
+    }
+
+    utterance.onend = () => resolve(utterance)
+    utterance.onerror = (e) => {
+      // 'interrupted' and 'canceled' are not real errors
+      if (e.error === 'interrupted' || e.error === 'canceled') {
+        resolve(utterance)
+      } else {
+        reject(new Error(e.error || 'Speech synthesis error'))
+      }
+    }
+
+    window.speechSynthesis.speak(utterance)
+
+    // Resolve immediately with the utterance so caller can control it
+    resolve(utterance)
+  })
+}
+
+/**
+ * Stop any ongoing browser TTS
+ */
+export function stopBrowserTTS() {
+  if (hasBrowserTTS()) {
+    window.speechSynthesis.cancel()
+  }
+}
+
+/**
  * Convert text to speech using backend proxy
  * @param {string} text - The text to convert to speech
  * @param {string} voiceId - The ElevenLabs voice ID to use
@@ -111,5 +175,8 @@ export default {
   textToSpeech,
   getAvailableVoices,
   testConnection,
-  isOnline
+  isOnline,
+  hasBrowserTTS,
+  speakWithBrowserTTS,
+  stopBrowserTTS
 }

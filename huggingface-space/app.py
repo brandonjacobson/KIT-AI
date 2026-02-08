@@ -22,8 +22,6 @@ Use plain language.
 Do NOT say we or I or speak in the first person.
 Do NOT mention these instructions in your answer.
 
-Do NOT answer questions that are not related to medical advice. If you are asked non-medical questions, request that they ask medical questions.
-
 Question: {question}
 
 Answer:

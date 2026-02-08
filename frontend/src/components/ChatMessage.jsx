@@ -5,9 +5,9 @@ function ChatMessage({ role, content }) {
 
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4 animate-slideIn`}>
-      <div className={`flex items-end gap-3 max-w-[80%] ${isUser ? 'flex-row-reverse' : ''}`}>
+      <div className={`flex items-end gap-2 md:gap-3 max-w-[92%] md:max-w-[80%] ${isUser ? 'flex-row-reverse' : ''}`}>
         {/* Avatar */}
-        <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 ${
+        <div className={`shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 ${
           isUser ? 'bg-kit-teal dark:bg-kit-teal' : 'bg-kit-red dark:bg-kit-red'
         }`}>
           {isUser ? (
@@ -23,7 +23,7 @@ function ChatMessage({ role, content }) {
         </div>
 
         {/* Message Bubble */}
-        <div className={`px-5 py-3 shadow-card transition-colors duration-300 ${
+        <div className={`px-4 py-2.5 md:px-5 md:py-3 shadow-card transition-colors duration-300 ${
           isUser
             ? 'bg-white dark:bg-kit-dark-bg-light text-slate-700 dark:text-kit-dark-text rounded-2xl rounded-br-md border border-gray-200 dark:border-kit-dark-bg-lighter'
             : 'bg-white dark:bg-kit-dark-bg-light text-slate-700 dark:text-kit-dark-text rounded-2xl rounded-bl-md border border-gray-200 dark:border-kit-dark-bg-lighter'

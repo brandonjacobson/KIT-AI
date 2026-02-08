@@ -6,10 +6,11 @@ function AudioPlayer({ messageContent, messageId }) {
   const [state, setState] = useState('idle') // idle, generating, ready, playing, paused, error
   const [audioBlob, setAudioBlob] = useState(null)
   const [errorMessage, setErrorMessage] = useState('')
+  const [usingBrowserTTS, setUsingBrowserTTS] = useState(false)
   const audioRef = useRef(null)
   const audioUrlRef = useRef(null)
 
-  const { generateAudio, speed, ttsEnabled, setPlaying, isOnline } = useTTS()
+  const { generateAudio, speakBrowser, stopBrowser, speed, ttsEnabled, setPlaying, isOnline, ttsMode, hasBrowserTTS } = useTTS()
   const { t } = useSettings()
 
   // Cleanup audio URL on unmount
@@ -21,8 +22,11 @@ function AudioPlayer({ messageContent, messageId }) {
       if (audioRef.current) {
         audioRef.current.pause()
       }
+      if (usingBrowserTTS) {
+        stopBrowser()
+      }
     }
-  }, [])
+  }, [usingBrowserTTS, stopBrowser])
 
   // Update audio playback speed when speed changes
   useEffect(() => {
@@ -38,14 +42,35 @@ function AudioPlayer({ messageContent, messageId }) {
       return
     }
 
+    // If offline, use browser TTS fallback
     if (!isOnline) {
-      setErrorMessage('Offline - TTS unavailable')
-      setState('error')
+      if (!hasBrowserTTS) {
+        setErrorMessage('Offline - no TTS available')
+        setState('error')
+        return
+      }
+
+      setState('playing')
+      setUsingBrowserTTS(true)
+      setErrorMessage('')
+
+      try {
+        await speakBrowser(messageContent)
+        setState('idle')
+        setUsingBrowserTTS(false)
+      } catch (error) {
+        console.error('Browser TTS error:', error)
+        setErrorMessage(error.message || 'Browser TTS failed')
+        setState('error')
+        setUsingBrowserTTS(false)
+      }
       return
     }
 
+    // Online: use ElevenLabs
     setState('generating')
     setErrorMessage('')
+    setUsingBrowserTTS(false)
 
     try {
       const blob = await generateAudio(messageContent)
@@ -96,6 +121,11 @@ function AudioPlayer({ messageContent, messageId }) {
   }
 
   const handlePlay = () => {
+    if (usingBrowserTTS) {
+      // Re-trigger browser TTS
+      handleGenerate()
+      return
+    }
     if (audioRef.current && state === 'ready') {
       audioRef.current.play()
     } else if (audioRef.current && state === 'paused') {
@@ -104,6 +134,12 @@ function AudioPlayer({ messageContent, messageId }) {
   }
 
   const handlePause = () => {
+    if (usingBrowserTTS) {
+      stopBrowser()
+      setState('idle')
+      setUsingBrowserTTS(false)
+      return
+    }
     if (audioRef.current) {
       audioRef.current.pause()
     }
@@ -122,7 +158,7 @@ function AudioPlayer({ messageContent, messageId }) {
     }
   }
 
-  // Don't render if TTS is disabled
+  // Don't render if TTS is disabled, or if offline and no browser TTS available
   if (!ttsEnabled) {
     return null
   }
@@ -135,7 +171,7 @@ function AudioPlayer({ messageContent, messageId }) {
           onKeyDown={handleKeyPress}
           aria-label={t('ttsPlay') || 'Play audio'}
           className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-kit-dark-bg-lighter transition-colors duration-300 group"
-          title={t('ttsPlay') || 'Play audio'}
+          title={!isOnline && hasBrowserTTS ? (t('ttsBrowserVoice') || 'Play with browser voice (offline)') : (t('ttsPlay') || 'Play audio')}
         >
           <svg
             className="w-5 h-5 text-gray-600 dark:text-kit-dark-text-muted group-hover:text-kit-teal dark:group-hover:text-kit-teal transition-colors duration-300"

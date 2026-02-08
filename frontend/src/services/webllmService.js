@@ -24,49 +24,69 @@ const DEFAULT_MODEL = customModelRecord ? CUSTOM_MODEL_ID : 'Llama-3.2-3B-Instru
 
 let engine = null
 let worker = null
+let initPromise = null // Guards against concurrent init calls (e.g. StrictMode)
 
 export async function initEngine(modelId = DEFAULT_MODEL, onProgress) {
   console.log('[WebLLM] initEngine called', { modelId, hasExistingEngine: !!engine })
 
+  // If already initialized, return the existing engine
   if (engine) {
     console.log('[WebLLM] Engine already exists, returning existing engine')
     return engine
   }
 
-  console.log('[WebLLM] Creating new worker...')
-  worker = new Worker(
-    new URL('../worker/webllm-worker.js', import.meta.url),
-    { type: 'module' }
-  )
-
-  const appConfig = {
-    ...prebuiltAppConfig,
-    useIndexedDBCache: true,
-    model_list: customModelRecord
-      ? [...prebuiltAppConfig.model_list, customModelRecord]
-      : prebuiltAppConfig.model_list,
+  // If init is already in progress, return the same promise to avoid duplicates
+  if (initPromise) {
+    console.log('[WebLLM] Init already in progress, waiting for existing promise')
+    return initPromise
   }
 
-  const engineConfig = {
-    appConfig,
-    initProgressCallback: (report) => {
-      if (onProgress && report) {
-        const progress = report.progress ?? 0
-        onProgress({ ...report, progress: progress * 100 })
+  initPromise = (async () => {
+    console.log('[WebLLM] Creating new worker...')
+    worker = new Worker(
+      new URL('../worker/webllm-worker.js', import.meta.url),
+      { type: 'module' }
+    )
+
+    const appConfig = {
+      ...prebuiltAppConfig,
+      useIndexedDBCache: true,
+      model_list: customModelRecord
+        ? [...prebuiltAppConfig.model_list, customModelRecord]
+        : prebuiltAppConfig.model_list,
+    }
+
+    const engineConfig = {
+      appConfig,
+      initProgressCallback: (report) => {
+        if (onProgress && report) {
+          const progress = report.progress ?? 0
+          onProgress({ ...report, progress: progress * 100 })
+        }
+      },
+      logLevel: 'WARN',
+    }
+
+    console.log('[WebLLM] Creating engine...')
+    try {
+      engine = await CreateWebWorkerMLCEngine(worker, modelId, engineConfig)
+      console.log('[WebLLM] Engine created successfully!', { hasEngine: !!engine })
+      return engine
+    } catch (error) {
+      // Clean up on failure so a retry can start fresh
+      engine = null
+      if (worker) {
+        worker.terminate()
+        worker = null
       }
-    },
-    logLevel: 'WARN',
-  }
+      console.error('[WebLLM] Failed to create engine:', error)
+      throw error
+    } finally {
+      initPromise = null
+    }
+  })()
 
-  console.log('[WebLLM] Creating engine...')
-  try {
-    engine = await CreateWebWorkerMLCEngine(worker, modelId, engineConfig)
-    console.log('[WebLLM] Engine created successfully!', { hasEngine: !!engine })
-    return engine
-  } catch (error) {
-    console.error('[WebLLM] Failed to create engine:', error)
-    throw error
-  }
+  return initPromise
 }
 
 export async function chat(messages, options = {}) {
@@ -104,8 +124,21 @@ export async function chat(messages, options = {}) {
 }
 
 export async function unloadEngine() {
+  // If init is in progress, wait for it to finish before unloading
+  if (initPromise) {
+    try {
+      await initPromise
+    } catch (_) {
+      // Init failed — that's fine, we still clean up below
+    }
+  }
+
   if (engine) {
-    await engine.unload()
+    try {
+      await engine.unload()
+    } catch (err) {
+      console.warn('[WebLLM] Error during engine.unload():', err)
+    }
     engine = null
   }
   if (worker) {

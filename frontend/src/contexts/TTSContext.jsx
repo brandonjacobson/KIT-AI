@@ -1,11 +1,26 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
-import { textToSpeech, getAvailableVoices, isOnline } from '../services/elevenlabsService'
+import { textToSpeech, getAvailableVoices, isOnline, hasBrowserTTS, speakWithBrowserTTS, stopBrowserTTS } from '../services/elevenlabsService'
 import { useSettings } from './SettingsContext'
 
 const TTSContext = createContext()
 
 export function TTSProvider({ children }) {
   const { language } = useSettings()
+
+  // Track online status reactively
+  const [online, setOnline] = useState(navigator.onLine)
+
+  useEffect(() => {
+    const goOnline = () => setOnline(true)
+    const goOffline = () => setOnline(false)
+    window.addEventListener('online', goOnline)
+    window.addEventListener('offline', goOffline)
+    return () => {
+      window.removeEventListener('online', goOnline)
+      window.removeEventListener('offline', goOffline)
+    }
+  }, [])
+
   // Load settings from localStorage
   const [ttsEnabled, setTtsEnabled] = useState(() => {
     const saved = localStorage.getItem('kit-ai-tts-enabled')
@@ -34,6 +49,13 @@ export function TTSProvider({ children }) {
 
   const [voices, setVoices] = useState([])
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null)
+  // 'elevenlabs' | 'browser' - tracks which TTS engine is active
+  const [ttsMode, setTtsMode] = useState(online ? 'elevenlabs' : 'browser')
+
+  // Update TTS mode when online status changes
+  useEffect(() => {
+    setTtsMode(online ? 'elevenlabs' : 'browser')
+  }, [online])
 
   // Persist settings to localStorage
   useEffect(() => {
@@ -63,13 +85,13 @@ export function TTSProvider({ children }) {
       }
     }
 
-    if (ttsEnabled && isOnline()) {
+    if (ttsEnabled && online) {
       loadVoices()
     }
-  }, [ttsEnabled])
+  }, [ttsEnabled, online])
 
   /**
-   * Generate audio from text
+   * Generate audio from text (ElevenLabs when online)
    * @param {string} text - Text to convert to speech
    * @returns {Promise<Blob|null>} Audio blob or null if failed
    */
@@ -95,6 +117,31 @@ export function TTSProvider({ children }) {
   )
 
   /**
+   * Speak text using browser's built-in TTS (offline fallback)
+   * @param {string} text - Text to speak
+   * @returns {Promise<SpeechSynthesisUtterance>}
+   */
+  const speakBrowser = useCallback(
+    (text) => {
+      if (!ttsEnabled) {
+        throw new Error('TTS is disabled')
+      }
+      if (!hasBrowserTTS()) {
+        throw new Error('Browser speech synthesis not supported')
+      }
+      return speakWithBrowserTTS(text, language, speed)
+    },
+    [ttsEnabled, language, speed]
+  )
+
+  /**
+   * Stop browser TTS
+   */
+  const stopBrowser = useCallback(() => {
+    stopBrowserTTS()
+  }, [])
+
+  /**
    * Set the currently playing audio element
    * @param {HTMLAudioElement|null} audioElement - Audio element that is playing
    */
@@ -116,6 +163,7 @@ export function TTSProvider({ children }) {
       currentlyPlaying.currentTime = 0
       setCurrentlyPlaying(null)
     }
+    stopBrowserTTS()
   }, [currentlyPlaying])
 
   const value = {
@@ -129,10 +177,14 @@ export function TTSProvider({ children }) {
     setAutoPlay,
     voices,
     generateAudio,
+    speakBrowser,
+    stopBrowser,
     setPlaying,
     stopPlaying,
     currentlyPlaying,
-    isOnline: isOnline()
+    isOnline: online,
+    ttsMode,
+    hasBrowserTTS: hasBrowserTTS()
   }
 
   return <TTSContext.Provider value={value}>{children}</TTSContext.Provider>
