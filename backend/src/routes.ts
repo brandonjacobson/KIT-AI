@@ -2,6 +2,7 @@ import { Router, type Request, type Response } from "express";
 import { validateUpdateSecret } from "./auth.js";
 import { generateGuideline, SUPPORTED_SCENARIOS } from "./gemini.js";
 import {
+  addGuideline,
   getGuidelinesJson,
   getLatest,
   uploadGuidelines,
@@ -82,5 +83,30 @@ router.post("/update", validateUpdateSecret, async (_req: Request, res: Response
     });
   }
 });
+router.post("/learn", validateUpdateSecret, async (req: Request, res: Response) => {
+  try {
+    const { topic } = req.body;
+    if (!topic || typeof topic !== "string") {
+      res.status(400).json({ error: "Missing 'topic' field" });
+      return;
+    }
+
+    console.log(`🧠 Learning about: ${topic}`);
+    const entry = await generateGuideline(topic);
+    const result = await addGuideline(entry);
+
+    res.json({
+      success: true,
+      entry,
+      meta: result,
+    });
+  } catch (err) {
+    console.error("POST /learn error:", err);
+    res.status(500).json({
+      error: err instanceof Error ? err.message : "Failed to generate guideline",
+    });
+  }
+});
+
 
 export default router;

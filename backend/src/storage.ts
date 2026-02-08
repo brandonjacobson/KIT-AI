@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Storage } from "@google-cloud/storage";
-import type { Guidelines } from "./schema.js";
+import type { Guidelines, GuidelineEntry } from "./schema.js";
 
 const BUCKET = process.env.GCS_BUCKET;
 const PREFIX = "guidelines";
@@ -120,4 +120,44 @@ export async function getGuidelinesJson(): Promise<string | null> {
   } catch {
     return null;
   }
+}
+
+export async function addGuideline(entry: GuidelineEntry): Promise<LatestInfo> {
+  const json = await getGuidelinesJson();
+  let guidelines: Guidelines;
+
+  if (json) {
+    guidelines = JSON.parse(json);
+  } else {
+    guidelines = {
+      version: "1.0.0",
+      updated_at: new Date().toISOString(),
+      guidelines: [],
+    };
+  }
+
+  const existingIndex = guidelines.guidelines.findIndex((g) => g.id === entry.id);
+  if (existingIndex >= 0) {
+    guidelines.guidelines[existingIndex] = entry;
+  } else {
+    guidelines.guidelines.push(entry);
+  }
+
+  const [major, minor, patch] = guidelines.version.split(".").map(Number);
+  guidelines.version = `${major}.${minor}.${patch + 1}`;
+  guidelines.updated_at = new Date().toISOString();
+
+  const info = await uploadGuidelines(guidelines);
+
+  if (isLocalMode()) {
+    try {
+      const frontendPath = join(process.cwd(), "../frontend/public/medical-knowledge.json");
+      await writeFile(frontendPath, JSON.stringify(guidelines, null, 2), "utf-8");
+      console.log(`Synced to frontend: ${frontendPath}`);
+    } catch (err) {
+      console.warn("Skipping frontend sync:", err);
+    }
+  }
+
+  return info;
 }

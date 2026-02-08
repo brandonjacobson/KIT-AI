@@ -81,23 +81,37 @@ async function setStoredVersion(version) {
   })
 }
 
+const MEDICAL_SOURCES = [
+  '/medical-knowledge.json',
+  '/packs/learned.json' // Future "Topic Packs"
+]
+
 export async function fetchAndUpdate() {
-  const url = MEDICAL_SOURCE === 'api' ? MEDICAL_API_URL : MEDICAL_STATIC_URL
-  try {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json()
-    const { version, entries } = data
-    if (!version || !Array.isArray(entries)) return false
-    const storedVersion = await getStoredVersion()
-    if (version > storedVersion) {
+  let updatedInRun = false
+  
+  for (const url of MEDICAL_SOURCES) {
+    try {
+      const res = await fetch(url)
+      if (!res.ok) continue // Skip if pack missing
+      
+      const data = await res.json()
+      // Support both "entries" (legacy) and "guidelines" (Gemini) keys
+      const entries = data.entries || data.guidelines
+      
+      const { version } = data
+      if (!version || !Array.isArray(entries)) continue
+
+      // We use the version of the CORE file (first one) as the "db version"
+      // Or we just upsert everything and trust the individual item versions?
+      // For now, let's just upsert everything we find.
+      
       await setMedicalKnowledge(entries)
-      await setStoredVersion(version)
-      return true
+      updatedInRun = true
+
+    } catch (err) {
+      console.warn(`Failed to load pack ${url}:`, err)
     }
-    return false
-  } catch (err) {
-    console.warn('Medical cache fetch failed:', err)
-    return false
   }
+  
+  return updatedInRun
 }
