@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
-import { initEngine, chat, unloadEngine, hasWebGPU } from '../services/webllmService'
+import { initEngine, chat, unloadEngine, hasWebGPU, checkWebGPUInWorker } from '../services/webllmService'
 import { getMedicalContext } from '../services/medicalCacheService'
 
 const BASE_DISCLAIMER = `You are KIT AI, an expert offline First-Aid Assistant.
@@ -19,15 +19,21 @@ export function useWebLLM() {
   const [error, setError] = useState(null)
 
   const loadEngine = useCallback(async () => {
-    if (!hasWebGPU()) {
-      setError(new Error('WebGPU is not supported. Please use Chrome 113+, Edge 113+, Safari 26+, or Firefox 141+.'))
-      setStatus('error')
-      return
-    }
-
     setStatus('loading')
     setError(null)
     setProgress(0)
+
+    const webgpuCheck = await checkWebGPUInWorker()
+    if (!webgpuCheck.supported) {
+      setError(
+        new Error(
+          webgpuCheck.error ||
+            'WebGPU is not supported in this browser. Kit.ai runs the model in a Web Worker, which requires WebGPU support there. Please use Chrome 113+ or Edge 113+ for the best experience. Firefox may not support WebGPU in Workers yet.'
+        )
+      )
+      setStatus('error')
+      return
+    }
 
     try {
       await initEngine(undefined, (report) => {
@@ -42,7 +48,9 @@ export function useWebLLM() {
 
   const sendMessage = useCallback(
     async (userContent, chatHistory, onStream) => {
-      if (status !== 'ready') return
+      if (status !== 'ready') {
+        throw new Error('AI model is still loading. Please wait...')
+      }
 
       const medicalContext = await getMedicalContext()
       const systemContent = `${BASE_DISCLAIMER}\n\nMedical context:\n${medicalContext}`

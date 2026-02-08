@@ -6,4 +6,61 @@
   body {
     @apply font-sans antialiased;
   }
+
+  /* Disable transitions for motion-reduced users */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes checkmark {
+    0% {
+      transform: scale(0) rotate(45deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.4s ease-out forwards;
+  }
+
+  .animate-checkmark {
+    animation: checkmark 0.3s ease-out;
+  }
 }

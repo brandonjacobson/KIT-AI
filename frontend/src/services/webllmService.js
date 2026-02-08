@@ -26,10 +26,14 @@ let engine = null
 let worker = null
 
 export async function initEngine(modelId = DEFAULT_MODEL, onProgress) {
+  console.log('[WebLLM] initEngine called', { modelId, hasExistingEngine: !!engine })
+
   if (engine) {
+    console.log('[WebLLM] Engine already exists, returning existing engine')
     return engine
   }
 
+  console.log('[WebLLM] Creating new worker...')
   worker = new Worker(
     new URL('../worker/webllm-worker.js', import.meta.url),
     { type: 'module' }
@@ -54,26 +58,49 @@ export async function initEngine(modelId = DEFAULT_MODEL, onProgress) {
     logLevel: 'WARN',
   }
 
-  engine = await CreateWebWorkerMLCEngine(worker, modelId, engineConfig)
-  return engine
+  console.log('[WebLLM] Creating engine...')
+  try {
+    engine = await CreateWebWorkerMLCEngine(worker, modelId, engineConfig)
+    console.log('[WebLLM] Engine created successfully!', { hasEngine: !!engine })
+    return engine
+  } catch (error) {
+    console.error('[WebLLM] Failed to create engine:', error)
+    throw error
+  }
 }
 
 export async function chat(messages, options = {}) {
   if (!engine) {
-    throw new Error('Engine not initialized. Call initEngine first.')
+    console.warn('WebLLM engine is null, attempting to reinitialize...')
+    try {
+      await initEngine()
+    } catch (initError) {
+      console.error('Failed to reinitialize engine:', initError)
+      throw new Error('AI model failed to load. Please refresh the page.')
+    }
+  }
+
+  if (!engine) {
+    throw new Error('AI model failed to initialize. Please refresh the page.')
   }
 
   const { stream = true } = options
-  const chunks = await engine.chat.completions.create({
-    messages,
-    stream,
-    ...options,
-  })
 
-  if (stream) {
-    return chunks
+  try {
+    const chunks = await engine.chat.completions.create({
+      messages,
+      stream,
+      ...options,
+    })
+
+    if (stream) {
+      return chunks
+    }
+    return chunks.choices[0]?.message?.content ?? ''
+  } catch (error) {
+    console.error('Chat error:', error)
+    throw error
   }
-  return chunks.choices[0]?.message?.content ?? ''
 }
 
 export async function unloadEngine() {
@@ -89,4 +116,34 @@ export async function unloadEngine() {
 
 export function hasWebGPU() {
   return typeof navigator !== 'undefined' && 'gpu' in navigator
+}
+
+/**
+ * Checks WebGPU in Worker context (where WebLLM runs). Fails fast before model download.
+ * Returns { supported: boolean, error?: string }
+ */
+export async function checkWebGPUInWorker() {
+  if (!hasWebGPU()) {
+    return { supported: false, error: 'WebGPU API not found' }
+  }
+  return new Promise((resolve) => {
+    const worker = new Worker(
+      new URL('../worker/webgpu-check-worker.js', import.meta.url),
+      { type: 'module' }
+    )
+    const timeout = setTimeout(() => {
+      worker.terminate()
+      resolve({ supported: false, error: 'WebGPU check timed out' })
+    }, 5000)
+    worker.onmessage = (e) => {
+      clearTimeout(timeout)
+      worker.terminate()
+      resolve(e.data)
+    }
+    worker.onerror = (err) => {
+      clearTimeout(timeout)
+      worker.terminate()
+      resolve({ supported: false, error: err?.message || 'Worker error' })
+    }
+  })
 }
