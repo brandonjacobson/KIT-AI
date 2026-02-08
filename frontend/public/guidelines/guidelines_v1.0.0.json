@@ -1,0 +1,441 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-02-08T03:32:17.066Z",
+  "guidelines": [
+    {
+      "id": "choking",
+      "keywords": [
+        "choking",
+        "obstructed airway",
+        " Heimlich maneuver",
+        "first aid choking"
+      ],
+      "steps": [
+        "Determine if the person is actually choking. Look for signs like inability to speak, cough, or breathe; bluish skin color; or clutching at the throat.",
+        "If the person can cough forcefully, encourage them to continue coughing.",
+        "If the person cannot cough, speak, or breathe, perform the Heimlich maneuver (abdominal thrusts):",
+        "Stand behind the person and wrap your arms around their waist.",
+        "Make a fist with one hand and place it slightly above their navel.",
+        "Grasp your fist with your other hand and give quick, upward thrusts into their abdomen.",
+        "Repeat thrusts until the object is dislodged or the person becomes unconscious.",
+        "If the person becomes unconscious, carefully lower them to the ground.",
+        "Begin CPR (chest compressions) and check the mouth for the object each time you give breaths."
+      ],
+      "red_flags": [
+        "Unconsciousness",
+        "Inability to breathe after attempts to dislodge the object",
+        "Bluish skin color that does not improve",
+        "Chest pain",
+        "Persistent cough after the object is dislodged"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "severe_bleeding",
+      "keywords": [
+        "severe bleeding",
+        "heavy bleeding",
+        "uncontrolled bleeding",
+        "bleeding wound",
+        "stop bleeding"
+      ],
+      "steps": [
+        "Call for emergency medical help immediately if possible.",
+        "Protect yourself from bloodborne pathogens by wearing gloves if available.",
+        "Apply direct pressure to the wound with a clean cloth or bandage.",
+        "Maintain firm, continuous pressure. Do not lift the cloth to check the bleeding; if blood soaks through, apply another cloth on top.",
+        "If possible, elevate the injured body part above the heart to help slow blood flow.",
+        "If bleeding does not stop after 10-15 minutes of direct pressure, consider using a tourniquet if you are trained to do so or if instructed by emergency services.",
+        "Keep the person warm and still to prevent shock.",
+        "Continue to apply pressure until medical help arrives."
+      ],
+      "red_flags": [
+        "Bleeding that does not stop after 10-15 minutes of direct pressure.",
+        "Signs of shock (e.g., pale skin, rapid heartbeat, confusion, weakness).",
+        "The wound is very deep or large.",
+        "Bleeding from an artery (spurting blood).",
+        "Difficulty breathing.",
+        "Loss of consciousness."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "minor_cuts",
+      "keywords": [
+        "cut",
+        "scrape",
+        "wound",
+        "minor bleeding",
+        "first aid for cuts"
+      ],
+      "steps": [
+        "Wash your hands thoroughly with soap and water to prevent infection.",
+        "Gently clean the cut with mild soap and water. Remove any visible dirt or debris.",
+        "Rinse the cut thoroughly under clean, running water.",
+        "Apply a thin layer of antibiotic ointment to protect the wound and keep it moist.",
+        "Cover the cut with a clean bandage. Change the bandage daily, or more often if it becomes wet or dirty."
+      ],
+      "red_flags": [
+        "Uncontrollable bleeding that doesn't stop after 10 minutes of direct pressure.",
+        "Deep wound or a cut with jagged edges.",
+        "Cut is over a joint.",
+        "Inability to move comfortably near the wound.",
+        "Signs of infection, such as increased pain, redness, swelling, pus, or fever.",
+        "Embedded foreign object (glass, metal, etc.)",
+        "Cut caused by a dirty or rusty object (risk of tetanus)."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "burns",
+      "keywords": [
+        "burn",
+        "first aid burn",
+        "scald",
+        "fire",
+        "sunburn",
+        "chemical burn",
+        "electrical burn"
+      ],
+      "steps": [
+        "Immediately stop the burning process. Remove the person from the heat source.",
+        "For minor burns, cool the burn with cool (not cold) running water for 10-20 minutes. If running water isn't available, apply a cool compress.",
+        "Remove any clothing or jewelry near the burned area, unless it is stuck to the skin.",
+        "Cover the burn with a sterile, non-adhesive bandage or clean cloth.",
+        "If necessary, take over-the-counter pain relievers.",
+        "Protect the burn from pressure and friction."
+      ],
+      "red_flags": [
+        "Large burns (larger than the size of your palm).",
+        "Burns on the face, hands, feet, genitals, or major joints.",
+        "Deep burns (all layers of skin are burned).",
+        "Burns that are blistering.",
+        "Electrical burns.",
+        "Chemical burns.",
+        "Inhalation burns (difficulty breathing, coughing).",
+        "Signs of infection (increased pain, redness, swelling, fever).",
+        "If the person is an infant or elderly."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "allergic_reaction",
+      "keywords": [
+        "allergy",
+        "allergic reaction",
+        "anaphylaxis",
+        "hives",
+        "rash",
+        "swelling",
+        "difficulty breathing",
+        "epipen"
+      ],
+      "steps": [
+        "1. Assess the person's airway, breathing, and circulation. Ensure they are breathing.",
+        "2. If the person has an epinephrine auto-injector (EpiPen), help them use it, or administer it yourself if you are trained to do so. Follow the instructions on the device.",
+        "3. Call emergency services (911 or your local emergency number) immediately, even if the person feels better after using epinephrine.",
+        "4. Position the person comfortably. Lay them flat if they are feeling faint or weak, unless they are having difficulty breathing. In that case, help them sit up.",
+        "5. If possible, try to identify the allergen that caused the reaction to prevent further exposure.",
+        "6. Monitor the person's condition closely until medical help arrives."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the tongue, lips, or throat",
+        "Dizziness or loss of consciousness",
+        "Rapid heartbeat",
+        "Confusion",
+        "Pale or blue skin",
+        "Signs of shock"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "sprains",
+      "keywords": [
+        "sprain",
+        "ankle sprain",
+        "wrist sprain",
+        "joint injury",
+        "twisted ankle",
+        "ligament injury"
+      ],
+      "steps": [
+        "Rest: Avoid using the injured joint or limb as much as possible.",
+        "Ice: Apply an ice pack to the injured area for 15-20 minutes every 2-3 hours. Use a cloth between the ice and skin.",
+        "Compression: Wrap the injured area with a bandage to provide support and reduce swelling. Make sure the bandage is not too tight.",
+        "Elevation: Keep the injured area raised above your heart to help reduce swelling.",
+        "Pain Relief: Over-the-counter pain relievers like ibuprofen or acetaminophen can help manage pain."
+      ],
+      "red_flags": [
+        "Severe pain that doesn't improve with pain medication.",
+        "Inability to bear weight on the injured limb.",
+        "Numbness or tingling in the injured area.",
+        "Obvious deformity of the joint.",
+        "Signs of infection, such as fever, redness, or pus."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "heat_exhaustion",
+      "keywords": [
+        "heat exhaustion",
+        "heat stroke",
+        "overheating",
+        "dehydration",
+        "sunstroke",
+        "first aid heat exhaustion"
+      ],
+      "steps": [
+        "Move the person to a cool place, out of direct sunlight.",
+        "Lay the person down and slightly elevate their legs.",
+        "Loosen or remove any tight or heavy clothing.",
+        "Encourage the person to drink cool water or a sports drink containing electrolytes, if they are conscious and able to swallow.",
+        "Cool the person by applying cool, wet cloths or ice packs to the head, face, neck, armpits, and groin.",
+        "Fan the person to increase cooling."
+      ],
+      "red_flags": [
+        "High body temperature (104°F or 40°C or higher)",
+        "Confusion, altered mental state, or loss of consciousness",
+        "Rapid heart rate",
+        "Rapid, shallow breathing",
+        "Seizures",
+        "If symptoms worsen or do not improve within one hour."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "hypothermia",
+      "keywords": [
+        "hypothermia",
+        "cold exposure",
+        "low body temperature",
+        "frostbite",
+        "shivering",
+        "confusion",
+        "first aid cold"
+      ],
+      "steps": [
+        "Move the person to a warmer location.",
+        "Remove any wet clothing and replace with dry layers, including hat and gloves.",
+        "If possible, cover the person with blankets, especially around the head and neck.",
+        "Offer warm, non-alcoholic, and non-caffeinated beverages if the person is conscious.",
+        "If available, use a warm compress or body-to-body contact to gradually warm the person.",
+        "Monitor the person's breathing and responsiveness. Be prepared to administer CPR if necessary."
+      ],
+      "red_flags": [
+        "Uncontrollable shivering or no shivering at all",
+        "Confusion, disorientation, or drowsiness",
+        "Slurred speech",
+        "Loss of coordination or difficulty walking",
+        "Weak pulse or slow breathing",
+        "Loss of consciousness"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "poisoning",
+      "keywords": [
+        "poison",
+        "poisoning",
+        "ingestion",
+        "swallowed",
+        "toxin",
+        "overdose"
+      ],
+      "steps": [
+        "Assess the situation and ensure your own safety. Remove yourself from the source of the poison if it is still present.",
+        "If the person is responsive, try to identify the poison. This information will be helpful for medical professionals.",
+        "If possible, check the container of the substance for first-aid instructions and follow them.",
+        "Call your local poison control center or emergency services for guidance. Be prepared to provide information about the person's age, weight, condition, and the name of the substance, if known.",
+        "If the person is having difficulty breathing, start rescue breathing or CPR if you are trained.",
+        "If the person vomits, turn them on their side to prevent choking.",
+        "Collect any containers, bottles, or remaining substance to give to medical personnel."
+      ],
+      "red_flags": [
+        "Difficulty breathing or shortness of breath",
+        "Loss of consciousness or decreased level of alertness",
+        "Seizures or convulsions",
+        "Chest pain or irregular heartbeat",
+        "Severe abdominal pain, vomiting, or diarrhea",
+        "Burns around the mouth",
+        "Unusual behavior, confusion, or hallucinations"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "unconscious_not_breathing",
+      "keywords": [
+        "unconscious",
+        "not breathing",
+        "CPR",
+        "cardiopulmonary resuscitation",
+        "no pulse",
+        "emergency",
+        "first aid"
+      ],
+      "steps": [
+        "Check for responsiveness: Gently tap the person and shout, 'Are you OK?'",
+        "Call for emergency medical services immediately (e.g., dial 911 or your local emergency number) or ask someone else to do so.",
+        "Check for breathing: Look for chest movement. If the person is not breathing or is only gasping, begin CPR.",
+        "Begin chest compressions: Place the heel of one hand in the center of the person's chest. Place your other hand on top of the first. Push hard and fast, compressing the chest about 2 inches at a rate of 100-120 compressions per minute.",
+        "Give rescue breaths: After 30 chest compressions, give two rescue breaths. Open the person's airway using the head-tilt/chin-lift method. Pinch the nose shut and create a seal over the person's mouth with yours. Give two breaths, each lasting about one second, and watch for the chest to rise.",
+        "Continue CPR: Continue cycles of 30 chest compressions and 2 rescue breaths until professional medical help arrives or the person shows signs of life."
+      ],
+      "red_flags": [
+        "No signs of breathing after rescue breaths.",
+        "No pulse detected.",
+        "Continued unresponsiveness.",
+        "Seizure activity.",
+        "Obvious injuries."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "nosebleed",
+      "keywords": [
+        "nosebleed",
+        "epistaxis",
+        "bleeding nose",
+        "nose bleed"
+      ],
+      "steps": [
+        "Sit upright and lean slightly forward.",
+        "Pinch the soft part of your nose just below the bony bridge, using your thumb and index finger.",
+        "Breathe through your mouth.",
+        "Maintain pressure for 10-15 minutes without releasing. Time it carefully.",
+        "Check if the bleeding has stopped after 10-15 minutes. If not, continue applying pressure for another 10-15 minutes.",
+        "Once the bleeding stops, avoid blowing your nose or picking at it for several hours."
+      ],
+      "red_flags": [
+        "Bleeding lasts longer than 20-30 minutes despite applying pressure.",
+        "The nosebleed is the result of a significant injury, such as a blow to the face.",
+        "You are taking blood-thinning medications (anticoagulants).",
+        "You have a bleeding disorder.",
+        "The bleeding is rapid or heavy.",
+        "You feel weak, dizzy, or faint.",
+        "You are swallowing a large amount of blood."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "insect_sting",
+      "keywords": [
+        "insect sting",
+        "bee sting",
+        "wasp sting",
+        "hornet sting",
+        "yellow jacket sting",
+        "sting",
+        "bug bite"
+      ],
+      "steps": [
+        "If a stinger is visible (as with honeybee stings), gently scrape it away with a fingernail or stiff card. Avoid squeezing the stinger, which may release more venom.",
+        "Wash the area with soap and water.",
+        "Apply a cold compress or ice pack to the sting site for 10-20 minutes to help reduce swelling and pain. Wrap the ice pack in a cloth to protect the skin.",
+        "Consider an over-the-counter pain reliever like ibuprofen or acetaminophen for pain relief. Follow the package instructions.",
+        "An antihistamine may help relieve itching or mild allergic symptoms. Follow the package instructions."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the face, lips, tongue, or throat",
+        "Hives or rash spreading beyond the sting site",
+        "Dizziness or fainting",
+        "Rapid heartbeat",
+        "Nausea, vomiting, or diarrhea",
+        "Loss of consciousness",
+        "Known severe allergy to insect stings (anaphylaxis)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "fracture",
+      "keywords": [
+        "fracture",
+        "broken bone",
+        "break",
+        "splint",
+        "immobilize",
+        "first aid",
+        "bone"
+      ],
+      "steps": [
+        "Assess the situation and ensure safety for both yourself and the injured person.",
+        "If there is bleeding, control it by applying direct pressure to the wound.",
+        "Immobilize the injured area using a splint and padding to prevent further movement. Use materials like cardboard, cloth, or tape to secure the splint.",
+        "Apply ice packs to the injured area to reduce swelling and pain.",
+        "Elevate the injured limb if possible to minimize swelling.",
+        "Monitor the person for any signs of shock (e.g., pale skin, rapid heartbeat, shallow breathing).",
+        "Keep the person warm and comfortable."
+      ],
+      "red_flags": [
+        "Open fracture (bone protruding through the skin)",
+        "Deformity of the injured limb",
+        "Severe pain despite immobilization",
+        "Loss of sensation or tingling in the injured limb",
+        "Inability to move the injured limb",
+        "Signs of shock (e.g., pale skin, rapid heartbeat, shallow breathing)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "seizure",
+      "keywords": [
+        "seizure",
+        "fit",
+        "convulsion",
+        "epileptic attack"
+      ],
+      "steps": [
+        "Stay calm and time the seizure.",
+        "Protect the person from injury by removing nearby objects.",
+        "Cushion their head with something soft, if possible.",
+        "Loosen any tight clothing around the neck.",
+        "Turn the person gently onto their side to help keep the airway clear after the seizure has stopped.",
+        "Do not put anything in their mouth.",
+        "Do not try to restrain them.",
+        "Stay with the person until they are fully conscious and aware of their surroundings.",
+        "Speak calmly and reassuringly."
+      ],
+      "red_flags": [
+        "The seizure lasts more than 5 minutes.",
+        "The person has repeated seizures without regaining consciousness in between.",
+        "The person is injured during the seizure.",
+        "The person has difficulty breathing after the seizure.",
+        "The person has diabetes, is pregnant, or has other known medical conditions.",
+        "This is the person's first seizure.",
+        "You are concerned for any other reason."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "stroke_signs",
+      "keywords": [
+        "stroke",
+        "signs of stroke",
+        "FAST",
+        "face drooping",
+        "arm weakness",
+        "speech difficulty",
+        "time to call 911",
+        "first aid stroke"
+      ],
+      "steps": [
+        "Recognize the signs of a stroke using the acronym FAST: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services.",
+        "Note the time when the symptoms first appeared. This information is crucial for medical professionals.",
+        "Keep the person calm and comfortable.",
+        "Loosen any tight clothing around their neck.",
+        "Do not give the person anything to eat or drink.",
+        "Monitor the person's breathing and be prepared to administer CPR if necessary."
+      ],
+      "red_flags": [
+        "Sudden numbness or weakness of the face, arm, or leg, especially on one side of the body.",
+        "Sudden confusion, trouble speaking, or difficulty understanding speech.",
+        "Sudden trouble seeing in one or both eyes.",
+        "Sudden severe headache with no known cause.",
+        "Sudden trouble walking, dizziness, loss of balance, or lack of coordination.",
+        "Loss of consciousness."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    }
+  ]
+}

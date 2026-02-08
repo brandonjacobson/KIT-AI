@@ -1,0 +1,1509 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-02-08T06:06:12.593Z",
+  "guidelines": [
+    {
+      "id": "Frostbite",
+      "keywords": [
+        "frostbite",
+        "frozen",
+        "cold exposure",
+        "white skin",
+        "numbness",
+        "first aid"
+      ],
+      "steps": [
+        "Move the person to a warmer location.",
+        "Protect the affected area from further exposure. If possible, loosely cover with a clean cloth.",
+        "Remove any wet or restrictive clothing.",
+        "If there is a chance the affected area may refreeze, it is generally advised to delay rewarming until a safe location is reached.",
+        "If rewarming is possible without risk of refreezing, use warm water (not hot, ideally between 104-108°F or 40-42°C). Avoid direct heat sources like a fire or radiator.",
+        "Soak the affected area in warm water for 20-30 minutes. If warm water isn't available, use body heat. Do not rub or massage the area.",
+        "After rewarming, gently dry the area and wrap it loosely in sterile bandages. Keep the area elevated to help reduce swelling.",
+        "If fingers or toes are affected, place cotton balls or gauze between them to keep them separated."
+      ],
+      "red_flags": [
+        "Blisters develop on the affected skin.",
+        "The skin turns black or hard.",
+        "Severe pain persists after rewarming.",
+        "Signs of infection develop (increased pain, swelling, redness, pus).",
+        "The person develops a fever."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Heat Stroke",
+      "keywords": [
+        "heatstroke",
+        "heat stroke",
+        "sun stroke",
+        "high body temperature",
+        "hot skin",
+        "altered mental state",
+        "first aid",
+        "emergency"
+      ],
+      "steps": [
+        "Move the person to a cooler environment, ideally an air-conditioned room or a shady spot.",
+        "Remove excess clothing to help the body cool down.",
+        "Cool the person quickly using any available methods:",
+        "   - Apply cool water to the skin with a sponge or spray bottle.",
+        "   - Fan the person to promote evaporation.",
+        "   - Place ice packs or cool, wet cloths on the neck, armpits, and groin.",
+        "Monitor the person's temperature. Continue cooling efforts until the body temperature drops below 102°F (39°C).",
+        "If the person is alert and able to swallow, offer cool fluids (water or sports drinks) to rehydrate.",
+        "Position the person on their side if they are vomiting to prevent choking.",
+        "Monitor the person's breathing and be prepared to administer CPR if necessary."
+      ],
+      "red_flags": [
+        "High body temperature (104°F/40°C or higher)",
+        "Altered mental state or behavior, such as confusion, disorientation, seizures, or loss of consciousness",
+        "Hot, dry skin or profuse sweating",
+        "Nausea and vomiting",
+        "Rapid breathing or heart rate",
+        "Headache",
+        "Muscle cramps or weakness",
+        "If the person stops sweating.",
+        "If the person's condition worsens despite cooling efforts."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Dehydration",
+      "keywords": [
+        "dehydration",
+        "fluid loss",
+        "thirsty",
+        "heat exhaustion",
+        "heat stroke"
+      ],
+      "steps": [
+        "If the person is conscious, give them small sips of water or a sports drink.",
+        "Move the person to a cooler place, out of direct sunlight.",
+        "Help the person lie down and rest.",
+        "Loosen any tight or heavy clothing.",
+        "If the person is able to drink, continue to give them fluids gradually."
+      ],
+      "red_flags": [
+        "Confusion or disorientation",
+        "Rapid heartbeat",
+        "Rapid breathing",
+        "Seizures",
+        "Loss of consciousness",
+        "Inability to keep down fluids",
+        "Very dark urine or no urine output"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Altitude Sickness",
+      "keywords": [
+        "altitude sickness",
+        "mountain sickness",
+        "high altitude",
+        "headache",
+        "nausea",
+        "AMS",
+        "HAPE",
+        "HACE"
+      ],
+      "steps": [
+        "Descend to a lower altitude as quickly and safely as possible. Even a small descent of 1,500 to 3,000 feet can help.",
+        "Stop ascending. Do not go any higher until symptoms improve.",
+        "Rest. Avoid strenuous activity.",
+        "Stay hydrated by drinking plenty of fluids, such as water or sports drinks.",
+        "If you have a headache, you can take over-the-counter pain relievers like ibuprofen or acetaminophen.",
+        "If nausea is present, consider anti-nausea medication if available and appropriate."
+      ],
+      "red_flags": [
+        "Severe headache that doesn't respond to medication.",
+        "Persistent nausea and vomiting.",
+        "Increasing weakness or fatigue.",
+        "Shortness of breath, even at rest.",
+        "Coughing, especially if producing frothy or pink sputum (possible sign of HAPE - High Altitude Pulmonary Edema).",
+        "Confusion, disorientation, or changes in mental status (possible sign of HACE - High Altitude Cerebral Edema).",
+        "Difficulty walking or loss of coordination.",
+        "Seizures."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Sunburn",
+      "keywords": [
+        "sunburn",
+        "burn",
+        "sun",
+        "red skin",
+        "blisters",
+        "sun poisoning"
+      ],
+      "steps": [
+        "Move the person out of the sun immediately.",
+        "Cool the skin with cool (not cold) water. This can be done with a shower, bath, or cool compresses.",
+        "Apply a moisturizing lotion to the affected skin.",
+        "Drink plenty of fluids to prevent dehydration.",
+        "If blisters form, do not break them. Allow them to heal on their own to prevent infection.",
+        "Over-the-counter pain relievers (like ibuprofen or acetaminophen) can be taken to reduce pain and inflammation, following package instructions.",
+        "Wear loose-fitting clothing to avoid irritating the burnt skin."
+      ],
+      "red_flags": [
+        "Severe blistering",
+        "Fever",
+        "Chills",
+        "Nausea or vomiting",
+        "Dizziness or confusion",
+        "Signs of dehydration (decreased urination, excessive thirst)",
+        "Signs of infection (pus, increased pain, swelling, redness)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Lightning Strike",
+      "keywords": [
+        "lightning",
+        "struck by lightning",
+        "electrical injury",
+        "thunderstorm",
+        "burns",
+        "cardiac arrest",
+        "seizure"
+      ],
+      "steps": [
+        "Ensure the scene is safe before approaching the person. Lightning can strike again.",
+        "Check the person for responsiveness, breathing, and circulation. If the person is unresponsive and not breathing, begin CPR immediately.",
+        "Call for emergency medical help or ask someone else to do so.",
+        "Treat any burns. Cool the burn with cool (not ice-cold) water for an extended period. Cover the burn with a sterile bandage or clean cloth.",
+        "Look for other injuries, such as fractures or dislocations, and stabilize them as best as possible.",
+        "Keep the person warm and as comfortable as possible while waiting for emergency medical services to arrive."
+      ],
+      "red_flags": [
+        "Unconsciousness or unresponsiveness",
+        "Difficulty breathing or stopped breathing",
+        "Seizures",
+        "Cardiac arrest (no pulse)",
+        "Significant burns, especially deep burns",
+        "Confusion or disorientation",
+        "Neurological symptoms (e.g., weakness, numbness, paralysis)",
+        "Irregular heartbeat"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Bee Sting",
+      "keywords": [
+        "bee sting",
+        "insect sting",
+        "sting",
+        "bee",
+        "insect"
+      ],
+      "steps": [
+        "If the stinger is visible, gently try to remove it. Some sources advise scraping it away with a fingernail or a credit card edge. Avoid squeezing the stinger, which may release more venom.",
+        "Wash the area with soap and water.",
+        "Apply a cold compress to the sting site to help reduce swelling and pain.",
+        "Consider an over-the-counter antihistamine or pain reliever to help alleviate itching, swelling, and discomfort. Follow the product's instructions."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the face, lips, or tongue",
+        "Hives or rash all over the body",
+        "Dizziness or fainting",
+        "Rapid heartbeat",
+        "Nausea or vomiting"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Snake Bite",
+      "keywords": [
+        "snake bite",
+        "snake",
+        "bite",
+        "venom",
+        "antivenom"
+      ],
+      "steps": [
+        "Move away from the snake to prevent further bites.",
+        "Call for emergency medical assistance or transport the person to a hospital as quickly as possible.",
+        "Keep the person calm and still to slow the spread of venom.",
+        "Immobilize the bitten limb and keep it below heart level.",
+        "Remove any rings, watches, or tight clothing from the bitten limb.",
+        "If possible, note the time of the bite and the snake's appearance (without risking further bites) to help with identification for antivenom treatment."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Changes in vision",
+        "Nausea or vomiting",
+        "Severe pain",
+        "Swelling around the bite area",
+        "Muscle twitching or weakness",
+        "Drooping eyelids",
+        "Bleeding or clotting problems",
+        "Signs of allergic reaction (hives, itching, swelling of the face, tongue, or throat)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Spider Bite",
+      "keywords": [
+        "spider bite",
+        "bite",
+        "spider",
+        "first aid",
+        "insect bite"
+      ],
+      "steps": [
+        "Wash the bite area gently with soap and water.",
+        "Apply a cold compress or ice pack wrapped in cloth to the bite for 10 minutes on, 10 minutes off to help reduce swelling and pain.",
+        "Elevate the affected area if possible.",
+        "Monitor for signs of infection or a severe reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Severe pain",
+        "Muscle cramping or spasms",
+        "Numbness or tingling",
+        "Blistering or ulceration at the bite site",
+        "Spread of redness or swelling",
+        "Fever",
+        "Nausea or vomiting",
+        "Severe allergic reaction (anaphylaxis)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Tick Bite",
+      "keywords": [
+        "tick",
+        "bite",
+        "tick bite",
+        "remove tick",
+        "Lyme disease",
+        "insect bite"
+      ],
+      "steps": [
+        "Use fine-tipped tweezers to grasp the tick as close to the skin's surface as possible.",
+        "Pull the tick upward with steady, even pressure. Do not twist or jerk the tick; this can cause the mouthparts to break off and remain in the skin. If this happens, try to remove the mouthparts with clean tweezers. If you can't remove them easily, leave them alone and let the skin heal.",
+        "After removing the tick, thoroughly clean the bite area and your hands with rubbing alcohol, an iodine scrub, or soap and water.",
+        "Dispose of a live tick by putting it in alcohol, placing it in a sealed bag or container, wrapping it tightly in tape, or flushing it down the toilet. Never crush a tick with your fingers.",
+        "Monitor the bite area for any signs of infection or rash."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "A severe headache",
+        "Paralysis",
+        "A spreading rash, especially one that looks like a bull's-eye",
+        "Fever",
+        "Joint pain",
+        "Muscle aches"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Jellyfish Sting",
+      "keywords": [
+        "jellyfish",
+        "sting",
+        "jellyfish sting",
+        "marine sting",
+        "seawater sting",
+        "tentacles"
+      ],
+      "steps": [
+        "Carefully remove any visible tentacles from the skin using tweezers or a gloved hand. Avoid rubbing the area, as this may release more venom.",
+        "Rinse the affected area with vinegar for at least 30 seconds. If vinegar is not available, use seawater. Do not use fresh water, as it can worsen the sting.",
+        "Apply a cold pack or ice pack wrapped in a cloth to the affected area for 15-20 minutes to help reduce pain and swelling.",
+        "If pain persists, over-the-counter pain relievers such as ibuprofen or acetaminophen may be taken according to package instructions.",
+        "If itching occurs, an over-the-counter antihistamine may provide relief. Follow package instructions.",
+        "Monitor for signs of an allergic reaction or worsening symptoms."
+      ],
+      "red_flags": [
+        "Difficulty breathing or shortness of breath",
+        "Swelling of the face, lips, or tongue",
+        "Chest pain or tightness",
+        "Dizziness or loss of consciousness",
+        "Severe muscle cramps or spasms",
+        "Widespread rash or hives",
+        "Signs of infection at the sting site (increased pain, redness, swelling, pus)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Dog Bite",
+      "keywords": [
+        "dog bite",
+        "animal bite",
+        "bite wound",
+        "rabies",
+        "infection"
+      ],
+      "steps": [
+        "1. Ensure your safety and the safety of others by securing the dog if possible.",
+        "2. Wash the wound thoroughly with soap and water for several minutes.",
+        "3. Control any bleeding by applying direct pressure to the wound with a clean cloth.",
+        "4. Apply an antiseptic to the wound after cleaning.",
+        "5. Cover the wound with a sterile bandage.",
+        "6. Seek medical attention, especially if the bite is deep, puncture wound, or if you are unsure of the dog's vaccination history."
+      ],
+      "red_flags": [
+        "Uncontrolled bleeding",
+        "Signs of infection (increased pain, redness, swelling, pus)",
+        "Deep wound or puncture wound",
+        "Bite from an unknown or unvaccinated animal",
+        "Development of fever",
+        "If you have not had a tetanus shot in the last 5 years",
+        "If the bite is on the face, hand, or near a joint"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Human Bite",
+      "keywords": [
+        "human bite",
+        "bite",
+        "wound",
+        "first aid",
+        "infection"
+      ],
+      "steps": [
+        "Wash the bite thoroughly with soap and water.",
+        "Apply pressure with a clean cloth to stop any bleeding.",
+        "Apply an antiseptic ointment to the wound.",
+        "Cover the bite with a sterile bandage.",
+        "Change the bandage daily and keep the wound clean and dry."
+      ],
+      "red_flags": [
+        "Signs of infection (increased pain, redness, swelling, pus)",
+        "Fever",
+        "Red streaks extending from the wound",
+        "Bite is deep or involves a joint",
+        "Bite on the face, hand, or foot",
+        "You are unsure of the biter's vaccination status (tetanus)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Mosquito Bites (Malaria/Dengue signs)",
+      "keywords": [
+        "mosquito bites",
+        "malaria",
+        "dengue",
+        "first aid",
+        "itchy bites",
+        "fever",
+        "headache",
+        "joint pain",
+        "rash"
+      ],
+      "steps": [
+        "Wash the bite area gently with soap and water.",
+        "Apply a cold compress or ice pack to reduce swelling and itching. Apply for 10-20 minutes at a time.",
+        "Avoid scratching the bites to prevent infection.",
+        "If itching is severe, consider using over-the-counter anti-itch cream or antihistamine."
+      ],
+      "red_flags": [
+        "High fever",
+        "Severe headache",
+        "Joint pain",
+        "Rash",
+        "Bleeding from gums or nose",
+        "Abdominal pain",
+        "Vomiting",
+        "Difficulty breathing",
+        "Signs of infection at the bite site (increased pain, swelling, redness, pus)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Broken Bone",
+      "keywords": [
+        "broken bone",
+        "fracture",
+        "bone injury",
+        "splint",
+        "immobilize"
+      ],
+      "steps": [
+        "1. Keep the person still and calm.",
+        "2. Examine the injured area for open wounds. If present, control bleeding by applying direct pressure with a clean cloth.",
+        "3. Immobilize the injured area using a splint and padding. If you don't have a splint, you can use a rolled-up newspaper or magazine.",
+        "4. Apply ice packs to the injured area to reduce swelling. Do not apply ice directly to the skin; wrap it in a cloth.",
+        "5. Elevate the injured limb if possible.",
+        "6. Monitor the person for signs of shock (e.g., pale skin, rapid heartbeat, confusion)."
+      ],
+      "red_flags": [
+        "The injured person is unresponsive or losing consciousness.",
+        "There is an open fracture (bone protruding through the skin).",
+        "The injured limb is deformed or at an unnatural angle.",
+        "The person has lost feeling or cannot move the injured limb.",
+        "There is significant bleeding that cannot be controlled.",
+        "Signs of shock are present."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Dislocation",
+      "keywords": [
+        "dislocation",
+        "dislocated joint",
+        "shoulder dislocation",
+        "finger dislocation",
+        "joint injury"
+      ],
+      "steps": [
+        "Immobilize the injured joint. Use a splint or sling to prevent movement.",
+        "Apply ice packs to the injured area to reduce pain and swelling.",
+        "Provide support. Use padding to make the person comfortable.",
+        "Seek professional medical attention for realignment of the joint."
+      ],
+      "red_flags": [
+        "Severe pain",
+        "Inability to move the joint",
+        "Numbness or tingling",
+        "Visible deformity",
+        "Open fracture"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Sprained Ankle",
+      "keywords": [
+        "ankle sprain",
+        "sprained ankle",
+        "ankle injury",
+        "RICE",
+        "ankle pain",
+        "twisting ankle"
+      ],
+      "steps": [
+        "Follow the RICE protocol: Rest, Ice, Compression, and Elevation.",
+        "Rest: Avoid putting weight on the injured ankle. Use crutches if necessary.",
+        "Ice: Apply an ice pack to the injured area for 15-20 minutes every 2-3 hours. Protect the skin by wrapping the ice pack in a cloth.",
+        "Compression: Wrap the ankle with an elastic bandage, but not too tightly. Make sure it's snug but doesn't cut off circulation.",
+        "Elevation: Elevate the ankle above heart level to reduce swelling.",
+        "Over-the-counter pain relievers, like ibuprofen or acetaminophen, may help manage pain."
+      ],
+      "red_flags": [
+        "Severe pain that doesn't improve with pain relievers.",
+        "Inability to bear weight on the injured ankle.",
+        "Numbness or tingling in the foot or toes.",
+        "Significant swelling or bruising.",
+        "Deformity of the ankle joint."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Head Injury",
+      "keywords": [
+        "head injury",
+        "head trauma",
+        "concussion",
+        "bumped head",
+        "head wound"
+      ],
+      "steps": [
+        "Ensure the scene is safe.",
+        "Check the person's responsiveness and breathing. If they are unresponsive and not breathing, begin CPR if you are trained.",
+        "If the person is breathing, try to keep them still and lying flat.",
+        "Apply direct pressure to any bleeding wounds with a clean cloth.",
+        "Monitor the person's level of consciousness, breathing, and any other symptoms.",
+        "If the person is conscious, ask them questions to assess their memory and orientation (e.g., What is your name? Where are you? What day is it?).",
+        "If vomiting occurs, turn the person onto their side to prevent choking, while keeping the head and neck aligned as much as possible.",
+        "Keep the person warm and comfortable while waiting for medical help to arrive."
+      ],
+      "red_flags": [
+        "Loss of consciousness, even briefly",
+        "Severe headache",
+        "Seizures or convulsions",
+        "Repeated vomiting",
+        "Clear fluid or blood draining from the ears or nose",
+        "Changes in vision",
+        "Slurred speech",
+        "Weakness or numbness in any part of the body",
+        "Confusion or disorientation",
+        "Difficulty walking or maintaining balance",
+        "Unequal pupil size",
+        "Worsening symptoms"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Concussion",
+      "keywords": [
+        "concussion",
+        "head injury",
+        "brain injury",
+        "head trauma",
+        "dizziness",
+        "confusion"
+      ],
+      "steps": [
+        "Assess the situation and ensure the person is in a safe environment.",
+        "If the person is unresponsive, check for breathing and pulse. Begin CPR if necessary and you are trained to do so.",
+        "If the person is responsive, keep them still and calm. Minimize movement of the head and neck.",
+        "Monitor the person for any changes in their condition.",
+        "If the person is alert and has no neck pain, they can sit up slowly.",
+        "Apply a cold compress to the head or neck if there is swelling or pain.",
+        "Do not administer any medication unless directed by a medical professional.",
+        "Watch for any worsening symptoms or red flags."
+      ],
+      "red_flags": [
+        "Loss of consciousness",
+        "Severe headache",
+        "Repeated vomiting",
+        "Seizures",
+        "Confusion or disorientation that gets worse",
+        "Weakness, numbness, or decreased coordination",
+        "Slurred speech",
+        "Vision changes",
+        "Bleeding or clear fluid from the ears or nose",
+        "Neck pain or stiffness"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Knocked Out Tooth",
+      "keywords": [
+        "tooth",
+        "knocked out tooth",
+        "dental avulsion",
+        "tooth injury",
+        "avulsed tooth"
+      ],
+      "steps": [
+        "Handle the tooth carefully. Avoid touching the root.",
+        "Rinse the tooth gently with clean water if it's dirty. Do not scrub it.",
+        "If possible, try to reinsert the tooth into its socket. Gently push it in using your fingers or by biting down on a soft cloth. Make sure the tooth is facing the right way.",
+        "If you can't reinsert the tooth, store it in milk, saliva, or a commercially available tooth preservation solution.",
+        "Get to a dentist or emergency room as quickly as possible. Time is critical for saving the tooth."
+      ],
+      "red_flags": [
+        "Heavy bleeding from the socket.",
+        "Other injuries to the face or mouth.",
+        "If the tooth cannot be reinserted.",
+        "If the person is feeling unwell or has other symptoms."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Eye Injury",
+      "keywords": [
+        "eye injury",
+        "eye trauma",
+        "foreign object in eye",
+        "chemical exposure eye"
+      ],
+      "steps": [
+        "For minor irritations from small particles: Gently flush the eye with clean, cool water. Use an eyewash cup or pour water from a clean container.",
+        "If a chemical is splashed in the eye: Immediately flush the eye with large amounts of clean water for at least 20 minutes. Tilt the head so the water runs away from the other eye. Seek immediate medical attention.",
+        "Do not rub the eye. Rubbing can cause further damage.",
+        "If a foreign object is embedded in the eye: Do not attempt to remove it. Stabilize the object as best as possible without applying pressure. Cover the eye with a clean cup or shield and seek immediate medical attention.",
+        "For cuts or punctures to the eye or eyelid: Gently cover the eye with a sterile dressing or clean cloth. Do not apply pressure. Seek immediate medical attention.",
+        "In general, protect the injured eye from further harm. Consider using eye protection if available.",
+        "If possible, seek help from a qualified medical professional or emergency services."
+      ],
+      "red_flags": [
+        "Vision changes or loss of vision",
+        "Severe pain",
+        "Double vision",
+        "Bleeding in the eye",
+        "Protrusion of the eye",
+        "Inability to move the eye",
+        "Foreign object embedded in the eye",
+        "Chemical exposure to the eye"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Puncture Wound",
+      "keywords": [
+        "puncture",
+        "wound",
+        "stab",
+        "nail",
+        "deep cut",
+        "penetration"
+      ],
+      "steps": [
+        "Wash your hands thoroughly with soap and water to help prevent infection.",
+        "If the bleeding is minor, allow it to bleed freely for a short time to help flush out any contaminants.",
+        "Wash the wound gently with mild soap and water. Avoid scrubbing.",
+        "Rinse the wound thoroughly under running water.",
+        "If the bleeding continues, apply firm, direct pressure to the wound with a clean cloth. Maintain pressure until the bleeding stops.",
+        "Once the bleeding has stopped, apply a thin layer of antibiotic ointment to the wound.",
+        "Cover the wound with a sterile bandage to protect it.",
+        "Change the bandage daily, or more often if it becomes wet or dirty.",
+        "Monitor for signs of infection (redness, swelling, pus, increased pain, fever).",
+        "If the puncture wound is deep, or if the object was dirty or rusty, consult a medical professional about a tetanus shot."
+      ],
+      "red_flags": [
+        "Uncontrollable bleeding",
+        "Deep wound",
+        "Wound near a joint",
+        "Object embedded in the wound",
+        "Signs of infection (redness, swelling, pus, increased pain, fever)",
+        "Loss of function",
+        "Suspected nerve or tendon damage",
+        "Puncture wound to the chest, abdomen, or head",
+        "If you are unsure about your tetanus status"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Heart Attack",
+      "keywords": [
+        "heart attack",
+        "chest pain",
+        "cardiac arrest",
+        "myocardial infarction",
+        "shortness of breath",
+        "emergency",
+        "first aid"
+      ],
+      "steps": [
+        "Recognize the signs of a heart attack, which may include chest pain or discomfort (pressure, squeezing, fullness), pain radiating to the arm, neck, jaw, or back, shortness of breath, nausea, sweating, lightheadedness, or anxiety.",
+        "Immediately call emergency services (e.g., 911) or ask someone else to call. Time is critical.",
+        "If the person is conscious, help them sit down and rest in a comfortable position, ideally with their knees raised and head and shoulders supported.",
+        "Loosen any tight clothing around their neck and chest.",
+        "If the person is prescribed medication for chest pain, such as nitroglycerin, help them take it, as directed. Ensure they are not allergic and check the expiration date.",
+        "If the person becomes unresponsive and stops breathing, begin CPR if you are trained to do so. Follow the instructions of the emergency dispatcher.",
+        "Stay with the person and monitor their condition until emergency services arrive. Provide reassurance and keep them calm."
+      ],
+      "red_flags": [
+        "Unconsciousness or unresponsiveness",
+        "Stopped breathing or difficulty breathing",
+        "Persistent chest pain that does not subside",
+        "Irregular or absent pulse",
+        "Sudden collapse",
+        "Known history of heart problems"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Stroke",
+      "keywords": [
+        "stroke",
+        "brain attack",
+        "sudden weakness",
+        "slurred speech",
+        "facial drooping",
+        "hemiparesis"
+      ],
+      "steps": [
+        "Recognize the signs of a stroke (see red flags). Time is critical.",
+        "Note the time when symptoms first appeared. This information is important for medical professionals.",
+        "Immediately call emergency services (e.g., 911) or your local emergency number.",
+        "Keep the person calm and comfortable.",
+        "Loosen any tight clothing around the neck.",
+        "If the person is conscious, position them on their side with their head slightly elevated. This can help prevent choking if vomiting occurs.",
+        "Monitor their breathing and be prepared to administer CPR if necessary.",
+        "Do not give the person anything to eat or drink.",
+        "Stay with the person until emergency services arrive and provide them with the information you have."
+      ],
+      "red_flags": [
+        "Sudden numbness or weakness of the face, arm, or leg, especially on one side of the body",
+        "Sudden confusion, trouble speaking, or difficulty understanding speech",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden severe headache with no known cause",
+        "Sudden trouble walking, dizziness, loss of balance, or coordination",
+        "Facial drooping (one side of the face droops when the person smiles)",
+        "Slurred speech or difficulty speaking",
+        "Loss of consciousness"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Diabetic Emergency (Low Sugar)",
+      "keywords": [
+        "diabetic emergency",
+        "low blood sugar",
+        "hypoglycemia",
+        "insulin shock",
+        "diabetes",
+        "sugar"
+      ],
+      "steps": [
+        "If the person is conscious and able to swallow, give them something sweet to eat or drink, such as juice, glucose tablets, hard candy, or regular (non-diet) soda.",
+        "Follow the instructions on their glucose tablets or gel, or provide approximately 15 grams of fast-acting carbohydrates.",
+        "Wait 15 minutes and check their blood sugar again if possible. If it is still low, give another 15 grams of fast-acting carbohydrates.",
+        "Once their blood sugar is back to a normal level, or if they start to feel better, give them a longer-acting source of carbohydrates, such as crackers and cheese or a sandwich.",
+        "If the person is unconscious, having seizures, or unable to swallow, do NOT give them anything by mouth. Place them in the recovery position (on their side) to protect their airway.",
+        "Monitor their breathing and circulation."
+      ],
+      "red_flags": [
+        "Unconsciousness",
+        "Seizures",
+        "Inability to swallow",
+        "Blood sugar remains low after administering sugar",
+        "No improvement after administering sugar",
+        "Difficulty breathing"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Asthma Attack",
+      "keywords": [
+        "asthma",
+        "attack",
+        "wheezing",
+        "shortness of breath",
+        "inhaler",
+        "respiratory distress"
+      ],
+      "steps": [
+        "Help the person sit upright in a comfortable position. Do not have them lie down.",
+        "Assist them in using their inhaler. Shake the inhaler well and use a spacer if available.",
+        "Encourage them to take slow, deep breaths.",
+        "Loosen any tight clothing around their neck and chest.",
+        "Stay calm and reassure the person.",
+        "If symptoms do not improve after using the inhaler, or if they worsen, seek immediate medical attention."
+      ],
+      "red_flags": [
+        "Severe shortness of breath",
+        "Inability to speak in full sentences",
+        "Blue lips or fingertips",
+        "Loss of consciousness",
+        "Chest pain",
+        "Inhaler not providing relief"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Anaphylaxis",
+      "keywords": [
+        "allergic reaction",
+        "allergy",
+        "anaphylactic shock",
+        "epinephrine",
+        "EpiPen",
+        "difficulty breathing",
+        "hives",
+        "swelling",
+        "first aid"
+      ],
+      "steps": [
+        "Recognize the signs of anaphylaxis: These can include hives, swelling (especially of the face, lips, or tongue), difficulty breathing or wheezing, throat tightness, dizziness, fainting, nausea, vomiting, or a rapid heartbeat.",
+        "If the person has an epinephrine auto-injector (EpiPen), help them use it promptly. Follow the instructions on the device. Inject into the outer mid-thigh, holding the injector in place for the prescribed time.",
+        "Call emergency services or seek immediate medical attention, even if symptoms improve after using epinephrine. Anaphylaxis can be life-threatening and may require further treatment.",
+        "If the person is having difficulty breathing, help them into a comfortable position, usually sitting upright.",
+        "Check the person's pulse and breathing. If they are not breathing, begin CPR if you are trained to do so.",
+        "If possible, try to identify the allergen that caused the reaction to avoid future exposure."
+      ],
+      "red_flags": [
+        "Severe difficulty breathing or wheezing",
+        "Loss of consciousness",
+        "Blue lips or skin",
+        "Confusion or disorientation",
+        "Rapid or weak pulse",
+        "Chest pain",
+        "Symptoms not improving after epinephrine injection"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Fainting",
+      "keywords": [
+        "fainting",
+        "syncope",
+        "passed out",
+        "unconscious",
+        "lightheaded"
+      ],
+      "steps": [
+        "Check for responsiveness. If the person is unresponsive, call for emergency medical help immediately if available.",
+        "If the person is breathing, position them on their back and elevate their legs above their heart level to help restore blood flow to the brain.",
+        "Loosen any tight clothing, such as belts or collars.",
+        "Check for injuries caused by the fall.",
+        "Once the person regains consciousness, allow them to sit up slowly.",
+        "Offer the person water if they feel able to drink. Avoid giving them anything to eat or drink too quickly.",
+        "Keep the person under observation to ensure they recover fully."
+      ],
+      "red_flags": [
+        "The person does not regain consciousness quickly.",
+        "The person has difficulty breathing.",
+        "The person experiences chest pain.",
+        "The person has a seizure.",
+        "The person has any injuries from the fall.",
+        "The person has a known heart condition or other serious medical condition.",
+        "The person is pregnant.",
+        "The person is over 50 years old."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Food Poisoning",
+      "keywords": [
+        "food poisoning",
+        "stomach ache",
+        "vomiting",
+        "diarrhea",
+        "nausea",
+        "contaminated food",
+        "foodborne illness"
+      ],
+      "steps": [
+        "Stay hydrated by drinking clear fluids like water, broth, or electrolyte solutions in small sips.",
+        "Avoid solid foods until vomiting and diarrhea subside. Then, gradually introduce bland, easily digestible foods like crackers, toast, or bananas.",
+        "Get plenty of rest to allow your body to recover.",
+        "Avoid dairy products, caffeine, alcohol, and fatty or spicy foods, as these can worsen symptoms."
+      ],
+      "red_flags": [
+        "High fever (over 101.5°F or 38.6°C)",
+        "Bloody vomit or stools",
+        "Severe abdominal pain or cramping",
+        "Signs of dehydration (decreased urination, dizziness, extreme thirst)",
+        "Neurological symptoms (blurred vision, muscle weakness, tingling)",
+        "Difficulty breathing or swallowing"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Chemical Burn",
+      "keywords": [
+        "chemical burn",
+        "burn",
+        "acid",
+        "base",
+        "alkali",
+        "first aid",
+        "skin",
+        "eye"
+      ],
+      "steps": [
+        "Immediately flush the affected area with large amounts of cool, running water for at least 20 minutes. If the chemical is in powder form, brush it off the skin before flushing with water.",
+        "Remove any contaminated clothing or jewelry carefully while flushing the area with water. If the chemical is in the eye, flush the eye with cool water, ensuring the water flows away from the unaffected eye.",
+        "If possible, determine the name of the chemical and provide this information to emergency services.",
+        "Cover the burn loosely with a sterile, non-adhesive dressing or clean cloth.",
+        "Monitor for signs of shock, such as rapid breathing, dizziness, or pale skin."
+      ],
+      "red_flags": [
+        "Difficulty breathing.",
+        "Large or deep burns.",
+        "Burns on the face, hands, feet, or genitals.",
+        "Signs of shock.",
+        "Eye exposure.",
+        "If the person is a young child or elderly.",
+        "If the person has other medical problems."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Carbon Monoxide Poisoning",
+      "keywords": [
+        "carbon monoxide",
+        "CO poisoning",
+        "poisoning",
+        "headache",
+        "dizziness",
+        "nausea",
+        "unconsciousness"
+      ],
+      "steps": [
+        "Immediately move the person to fresh air. Open windows and doors if safe to do so.",
+        "Call for emergency medical help (e.g., dial emergency services) as soon as possible.",
+        "If the person is not breathing, begin CPR if you are trained to do so.",
+        "Continue to monitor the person's condition until medical help arrives."
+      ],
+      "red_flags": [
+        "Unconsciousness",
+        "Seizures",
+        "Difficulty breathing",
+        "Chest pain",
+        "Confusion",
+        "Loss of coordination",
+        "Multiple people in the same location experiencing similar symptoms"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Mushroom Poisoning",
+      "keywords": [
+        "mushroom",
+        "poison",
+        "poisoning",
+        "toxic",
+        "ingestion",
+        "stomach",
+        "vomiting",
+        "diarrhea"
+      ],
+      "steps": [
+        "If the person is conscious and able to swallow, try to identify the mushroom. If possible, save a sample of the mushroom for identification by medical professionals.",
+        "Contact your local poison control center or emergency services immediately. Provide them with as much information as possible, including the species of mushroom (if known), the amount ingested, and the person's symptoms.",
+        "Follow the instructions provided by the poison control center or emergency services.",
+        "If instructed, induce vomiting only if advised by a medical professional. Do not induce vomiting if the person is unconscious, having difficulty breathing, or experiencing seizures.",
+        "If vomiting occurs, collect a sample of the vomit for testing.",
+        "Monitor the person's vital signs (breathing, pulse) and be prepared to administer basic first aid such as CPR if necessary.",
+        "Keep the person comfortable and reassure them while waiting for medical assistance."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Severe abdominal pain",
+        "Vomiting or diarrhea that won't stop",
+        "Seizures",
+        "Loss of consciousness",
+        "Confusion or disorientation",
+        "Yellowing of the skin or eyes (jaundice)",
+        "Signs of dehydration (decreased urination, dizziness)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Alcohol Poisoning",
+      "keywords": [
+        "alcohol poisoning",
+        "alcohol overdose",
+        "alcohol intoxication",
+        "vomiting",
+        "unresponsive",
+        "seizure",
+        "slow breathing",
+        "confusion"
+      ],
+      "steps": [
+        "If the person is conscious, try to keep them awake and sitting up.",
+        "If the person is unconscious, immediately call for emergency medical help.",
+        "Check the person's breathing and pulse frequently. Be prepared to administer CPR if necessary.",
+        "If the person is breathing, turn them onto their side in the recovery position to prevent choking if they vomit.",
+        "Keep the person warm with a blanket.",
+        "Stay with the person and monitor their condition until medical help arrives.",
+        "Provide medical personnel with as much information as possible, including the amount and type of alcohol consumed."
+      ],
+      "red_flags": [
+        "Unresponsiveness or unconsciousness",
+        "Slow or irregular breathing (fewer than 8 breaths per minute)",
+        "Seizures",
+        "Confusion or disorientation",
+        "Vomiting while unconscious",
+        "Pale or bluish skin",
+        "Low body temperature (hypothermia)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Heat Stroke",
+      "keywords": [
+        "heatstroke",
+        "heat stroke",
+        "sunstroke",
+        "high body temperature",
+        "hyperthermia",
+        "heat emergency"
+      ],
+      "steps": [
+        "Move the person to a cooler place, such as shade or an air-conditioned area.",
+        "Remove any unnecessary clothing.",
+        "Cool the person quickly using any available methods, such as:",
+        "   - Applying cool water to the skin (e.g., spraying with a hose, sponging with cool water).",
+        "   - Applying ice packs to the groin, armpits, and neck.",
+        "   - Fanning the person to increase cooling.",
+        "Monitor the person's temperature. Continue cooling efforts until the body temperature drops to a safer level (if a thermometer is available).",
+        "If the person is conscious and able to drink, give them cool water or a sports drink containing electrolytes.",
+        "If the person is experiencing seizures, protect them from injury and do not put anything in their mouth.",
+        "Stay with the person until medical help arrives."
+      ],
+      "red_flags": [
+        "High body temperature (104°F / 40°C or higher)",
+        "Hot, dry skin or profuse sweating",
+        "Confusion, altered mental state, or loss of consciousness",
+        "Rapid heart rate",
+        "Rapid, shallow breathing",
+        "Seizures",
+        "Nausea or vomiting",
+        "Muscle cramps or weakness"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Altitude Sickness",
+      "keywords": [
+        "altitude sickness",
+        "mountain sickness",
+        "high altitude",
+        "headache",
+        "nausea",
+        "AMS",
+        "HAPE",
+        "HACE"
+      ],
+      "steps": [
+        "If you suspect altitude sickness, the most important step is to descend to a lower altitude as quickly and safely as possible. Even a small descent can help.",
+        "Stop ascending any further. Rest and avoid strenuous activity.",
+        "Drink plenty of fluids, but avoid alcohol and caffeine.",
+        "If you have a headache, you can take over-the-counter pain relievers like ibuprofen or acetaminophen, following the package instructions.",
+        "If symptoms are mild, give your body time to acclimatize at the lower altitude before resuming your ascent, and do so gradually."
+      ],
+      "red_flags": [
+        "Severe headache that doesn't respond to pain relievers.",
+        "Persistent nausea or vomiting.",
+        "Increasing weakness or fatigue.",
+        "Shortness of breath, even at rest.",
+        "Confusion, disorientation, or changes in mental status.",
+        "Loss of coordination or difficulty walking.",
+        "Coughing, especially if producing frothy or pink sputum (possible sign of HAPE - High Altitude Pulmonary Edema).",
+        "Seizures or coma."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Lightning Strike",
+      "keywords": [
+        "lightning",
+        "strike",
+        "electrical injury",
+        "burn",
+        "seizure",
+        "cardiac arrest",
+        "first aid"
+      ],
+      "steps": [
+        "Ensure the scene is safe. Lightning can strike more than once.",
+        "If the person is unresponsive, check for breathing and a pulse. If absent, begin CPR immediately.",
+        "Call for emergency medical help as quickly as possible.",
+        "Move the person to a safer location if necessary, but only if you are not putting yourself at risk.",
+        "Check for burns, especially at entry and exit points (e.g., where the lightning entered and exited the body).",
+        "Stabilize the person's head and neck in case of spinal injury.",
+        "Cover the person with a blanket to prevent shock and preserve body heat.",
+        "Provide reassurance and emotional support while waiting for medical help to arrive."
+      ],
+      "red_flags": [
+        "Unconsciousness or unresponsiveness",
+        "Difficulty breathing or absence of breathing",
+        "Seizures",
+        "Cardiac arrest (no pulse)",
+        "Burns, especially deep burns",
+        "Confusion or disorientation",
+        "Paralysis or weakness",
+        "Irregular heartbeat",
+        "Spinal injury (neck or back pain, numbness, or tingling)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Drowning (near-drowning)",
+      "keywords": [
+        "drowning",
+        "near-drowning",
+        "suffocation",
+        "water",
+        "rescue",
+        "unconscious",
+        "breathing difficulty",
+        "CPR"
+      ],
+      "steps": [
+        "Ensure your own safety first before attempting a rescue.",
+        "Remove the person from the water as quickly and safely as possible.",
+        "Check for responsiveness. If the person is unresponsive, immediately call for emergency medical services if available.",
+        "Check for breathing. If the person is not breathing or is gasping, begin rescue breathing or CPR, if you are trained.",
+        "If the person is breathing, place them in the recovery position (on their side) to help prevent aspiration of fluids.",
+        "Keep the person warm and monitor their breathing until medical help arrives."
+      ],
+      "red_flags": [
+        "Unconsciousness",
+        "Difficulty breathing or persistent cough",
+        "Bluish skin discoloration (cyanosis)",
+        "Chest pain",
+        "Abnormal behavior or confusion",
+        "Persistent altered mental state"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Water Aspiration",
+      "keywords": [
+        "water aspiration",
+        "near drowning",
+        "water in lungs",
+        "choking on water",
+        "difficulty breathing after swimming"
+      ],
+      "steps": [
+        "If the person is conscious, encourage them to cough forcefully to try and clear their airway.",
+        "Monitor the person's breathing and level of consciousness closely.",
+        "If the person is unconscious or not breathing, begin CPR immediately. Follow standard CPR procedures, including chest compressions and rescue breaths.",
+        "If possible, administer oxygen if available and you are trained to do so.",
+        "Keep the person warm and calm while waiting for medical assistance."
+      ],
+      "red_flags": [
+        "Persistent coughing or wheezing",
+        "Difficulty breathing or shortness of breath",
+        "Chest pain or discomfort",
+        "Confusion or altered mental state",
+        "Bluish discoloration of the skin, lips, or nail beds (cyanosis)",
+        "Loss of consciousness",
+        "Frothy sputum"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Hypothermia After Water Exposure",
+      "keywords": [
+        "hypothermia",
+        "cold water",
+        "water exposure",
+        "shivering",
+        "confusion",
+        "body temperature",
+        "first aid",
+        "emergency"
+      ],
+      "steps": [
+        "Carefully remove the person from the water source.",
+        "Handle the person gently and avoid rough movements.",
+        "Remove any wet clothing immediately.",
+        "Dress the person in dry, warm clothing, including hat and gloves.",
+        "Cover the person with blankets or a warm sleeping bag to insulate them.",
+        "If available, offer warm, non-alcoholic, and non-caffeinated beverages to help raise their body temperature.",
+        "If the person is alert and able to swallow, provide high-energy foods like chocolate or energy bars.",
+        "Monitor the person's breathing and level of consciousness.",
+        "If the person is unconscious, check for breathing and pulse. Begin CPR if necessary."
+      ],
+      "red_flags": [
+        "Uncontrollable shivering or shivering that stops suddenly",
+        "Confusion, disorientation, or slurred speech",
+        "Loss of coordination or difficulty walking",
+        "Unconsciousness or unresponsiveness",
+        "Slow, shallow breathing or difficulty breathing",
+        "Weak pulse",
+        "Very cold skin that does not improve with warming"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Bee Sting",
+      "keywords": [
+        "bee sting",
+        "insect sting",
+        "sting",
+        "bee",
+        "allergic reaction",
+        "anaphylaxis"
+      ],
+      "steps": [
+        "If the stinger is visible, gently try to remove it. A credit card or similar object can be used to scrape it away. Avoid squeezing the stinger, which may release more venom.",
+        "Wash the area with soap and water.",
+        "Apply a cold compress or ice pack to the sting site for 10-20 minutes to help reduce swelling and pain.",
+        "Consider taking an over-the-counter pain reliever, such as ibuprofen or acetaminophen, to manage pain.",
+        "Monitor for signs of an allergic reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the face, lips, tongue, or throat",
+        "Hives or rash over a large part of the body",
+        "Dizziness or fainting",
+        "Rapid heartbeat",
+        "Nausea, vomiting, or diarrhea",
+        "Loss of consciousness",
+        "Known severe allergy to bee stings (anaphylaxis)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Heat Stroke",
+      "keywords": [
+        "heat stroke",
+        "sun stroke",
+        "overheating",
+        "high body temperature",
+        "emergency",
+        "first aid",
+        "heat exhaustion"
+      ],
+      "steps": [
+        "Move the person to a cooler environment: shade, indoors, or air conditioning.",
+        "Remove excess clothing.",
+        "Cool the person quickly by any means available: cool water immersion, spraying with cool water, fanning, or applying ice packs to the groin, armpits, and neck.",
+        "Monitor body temperature and continue cooling efforts until the temperature drops to a safer level.",
+        "If the person is alert and able to drink, provide cool fluids (water or sports drinks).",
+        "Position the person on their side if they are showing signs of reduced consciousness to protect their airway."
+      ],
+      "red_flags": [
+        "High body temperature (104°F / 40°C or higher)",
+        "Confusion, disorientation, or altered mental status",
+        "Hot, dry skin or profuse sweating",
+        "Rapid heart rate",
+        "Rapid breathing",
+        "Seizures",
+        "Loss of consciousness"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Altitude Sickness",
+      "keywords": [
+        "altitude sickness",
+        "mountain sickness",
+        "high altitude",
+        "headache",
+        "nausea",
+        "AMS",
+        "HAPE",
+        "HACE"
+      ],
+      "steps": [
+        "If you suspect altitude sickness, the most important first step is to descend to a lower altitude as quickly and safely as possible.",
+        "Stop ascending any further. Your body needs time to adjust to the current altitude.",
+        "Rest and avoid strenuous activity. Physical exertion can worsen symptoms.",
+        "Stay hydrated by drinking plenty of fluids, but avoid alcohol and caffeine.",
+        "Consider taking over-the-counter pain relievers like ibuprofen or acetaminophen for headache relief. Follow package directions.",
+        "If symptoms are mild, give your body time to acclimatize at the lower altitude before attempting to ascend again, and do so gradually."
+      ],
+      "red_flags": [
+        "Severe headache that doesn't respond to pain medication.",
+        "Persistent nausea or vomiting.",
+        "Increasing weakness or fatigue.",
+        "Shortness of breath, even at rest.",
+        "Coughing, especially if producing frothy or pink sputum.",
+        "Confusion, disorientation, or changes in mental state.",
+        "Difficulty walking or loss of coordination."
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Lightning Strike",
+      "keywords": [
+        "lightning",
+        "strike",
+        "electrical injury",
+        "burn",
+        "seizure",
+        "cardiac arrest",
+        "unresponsive"
+      ],
+      "steps": [
+        "Ensure safety: Make sure the area is safe from further lightning strikes before approaching the person.",
+        "Check responsiveness: Gently tap the person and ask loudly if they are okay. If there is no response, call for emergency services immediately if available.",
+        "Assess breathing and circulation: Check for breathing and a pulse. If the person is not breathing or does not have a pulse, begin CPR immediately if you are trained to do so.",
+        "Treat burns: Lightning strikes can cause burns. Cool the burn with cool (not cold) water for several minutes. Cover the burn with a clean, dry dressing.",
+        "Look for other injuries: Check for fractures, dislocations, and other trauma. Stabilize any suspected fractures or dislocations.",
+        "Provide reassurance: If the person is conscious, reassure them and keep them calm while waiting for medical help to arrive."
+      ],
+      "red_flags": [
+        "Unconsciousness or unresponsiveness",
+        "Difficulty breathing or absence of breathing",
+        "Seizures",
+        "Cardiac arrest (no pulse)",
+        "Severe burns",
+        "Confusion or disorientation",
+        "Neurological symptoms (e.g., weakness, numbness, paralysis)",
+        "Any signs of trauma or injury"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Drowning (near-drowning)",
+      "keywords": [
+        "drowning",
+        "near drowning",
+        "submersion",
+        "water rescue",
+        "suffocation",
+        "asphyxiation"
+      ],
+      "steps": [
+        "Ensure your own safety first before attempting a rescue.",
+        "Remove the person from the water if it is safe to do so.",
+        "Check for responsiveness. If the person is unresponsive, call for emergency medical help immediately.",
+        "Check for breathing. If the person is not breathing, begin rescue breathing. Give two initial breaths, then check for signs of life.",
+        "If there are no signs of life (breathing, coughing, or movement), begin chest compressions. Push hard and fast in the center of the chest.",
+        "Continue rescue breathing and chest compressions until emergency services arrive or the person shows signs of life.",
+        "If the person is breathing, place them in the recovery position (on their side) to help prevent aspiration.",
+        "Keep the person warm and monitor their breathing until medical help arrives."
+      ],
+      "red_flags": [
+        "Unresponsiveness",
+        "Difficulty breathing or no breathing",
+        "Persistent coughing",
+        "Chest pain",
+        "Confusion or altered mental state",
+        "Blue lips or skin (cyanosis)",
+        "Seizures",
+        "Vomiting"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Water Aspiration",
+      "keywords": [
+        "water aspiration",
+        "drowning",
+        "near drowning",
+        "water in lungs",
+        "choking on water",
+        "difficulty breathing after swimming",
+        "coughing after swimming"
+      ],
+      "steps": [
+        "If the person is conscious and coughing, encourage them to continue coughing to clear the airway.",
+        "Monitor the person's breathing and responsiveness.",
+        "If the person is having difficulty breathing, call for emergency medical help immediately.",
+        "If the person is unconscious and not breathing, begin CPR if you are trained to do so.",
+        "Keep the person warm and calm while waiting for medical assistance."
+      ],
+      "red_flags": [
+        "Persistent coughing or wheezing",
+        "Difficulty breathing or shortness of breath",
+        "Chest pain",
+        "Bluish skin (cyanosis)",
+        "Loss of consciousness",
+        "Confusion or altered mental state",
+        "Foam coming from the mouth or nose"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Hypothermia After Water Exposure",
+      "keywords": [
+        "hypothermia",
+        "cold water",
+        "water exposure",
+        "shivering",
+        "confusion",
+        "drowning",
+        "first aid",
+        "emergency",
+        "body temperature",
+        "after swimming",
+        "cold shock"
+      ],
+      "steps": [
+        "Move the person to a warm, dry place immediately to prevent further heat loss.",
+        "Remove any wet clothing carefully. Replace with dry clothes, blankets, towels, or anything available to insulate them.",
+        "If possible, warm the person gradually. Use blankets, body heat, or a warm (not hot) compress to the neck, armpits, and groin.",
+        "Offer warm, non-alcoholic, and non-caffeinated drinks if the person is conscious and able to swallow.",
+        "Monitor the person's breathing and level of consciousness. Be prepared to administer CPR if necessary.",
+        "Keep the person still and handle them gently. Avoid massaging or rubbing their limbs, as this can cause further complications."
+      ],
+      "red_flags": [
+        "Persistent shivering or shivering that stops suddenly",
+        "Confusion, disorientation, or slurred speech",
+        "Loss of coordination or difficulty walking",
+        "Unconsciousness or unresponsiveness",
+        "Slow, shallow breathing or difficulty breathing",
+        "Weak pulse",
+        "Very cold skin that is blue or pale"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Bee Sting",
+      "keywords": [
+        "bee sting",
+        "insect sting",
+        "sting",
+        "bee",
+        "swelling",
+        "itch"
+      ],
+      "steps": [
+        "If the stinger is visible, gently scrape it away with a fingernail or a credit card edge. Avoid squeezing the stinger, as this may release more venom.",
+        "Wash the area with soap and water.",
+        "Apply a cold compress to the sting site to reduce swelling and pain.",
+        "Consider taking an over-the-counter antihistamine to help relieve itching and swelling. Follow the product instructions for dosage.",
+        "Monitor for signs of an allergic reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing or wheezing",
+        "Swelling of the face, lips, tongue, or throat",
+        "Hives or rash spreading beyond the sting site",
+        "Dizziness or fainting",
+        "Rapid heartbeat",
+        "Nausea, vomiting, or diarrhea"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Snake Bite",
+      "keywords": [
+        "snakebite",
+        "snake bite",
+        "venomous snake",
+        "poisonous snake",
+        "snake attack"
+      ],
+      "steps": [
+        "Call for emergency medical assistance immediately if possible.",
+        "Keep the person calm and still to slow the spread of venom.",
+        "Immobilize the bitten limb and keep it below heart level, if possible.",
+        "Remove any rings, watches, or restrictive clothing from the affected limb.",
+        "If possible and safe, note the snake's appearance (color, size, pattern) for identification, but do NOT try to catch or kill it.",
+        "Clean the wound gently with soap and water if available.",
+        "Cover the wound with a clean, dry dressing.",
+        "Monitor the person's breathing and circulation."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Changes in heart rate",
+        "Swelling around the bite area",
+        "Severe pain",
+        "Nausea or vomiting",
+        "Blurred vision",
+        "Muscle weakness or paralysis",
+        "Bleeding or clotting problems",
+        "Signs of allergic reaction (hives, itching, swelling of the face, tongue, or throat)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Spider Bite",
+      "keywords": [
+        "spider bite",
+        "bite",
+        "spider",
+        "arachnid",
+        "first aid",
+        "insect bite"
+      ],
+      "steps": [
+        "Wash the bite area gently with soap and water.",
+        "Apply a cold compress or ice pack to the bite for 10 minutes on and 10 minutes off to help reduce pain and swelling.",
+        "Elevate the affected area, if possible, to help minimize swelling.",
+        "Monitor for signs of infection or a severe reaction."
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "Severe pain",
+        "Muscle cramping or spasms",
+        "Numbness or tingling",
+        "Spreading redness or swelling",
+        "Blisters",
+        "Fever",
+        "Nausea or vomiting",
+        "Dizziness",
+        "A bite from a known dangerous spider (e.g., black widow, brown recluse)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "Tick Bite",
+      "keywords": [
+        "tick",
+        "bite",
+        "tick bite",
+        "remove tick",
+        "Lyme disease",
+        "insect bite"
+      ],
+      "steps": [
+        "Use fine-tipped tweezers to grasp the tick as close to the skin's surface as possible.",
+        "Pull the tick straight out with steady, even pressure. Do not twist or jerk the tick, as this can cause the mouthparts to break off and remain in the skin.",
+        "If the mouthparts break off and remain in the skin, try to remove them with tweezers. If you cannot remove them easily, leave them alone and let the skin heal.",
+        "After removing the tick, thoroughly clean the bite area and your hands with soap and water, rubbing alcohol, or an antiseptic.",
+        "Dispose of the tick by placing it in a sealed bag or container, wrapping it tightly in tape, or flushing it down the toilet.",
+        "Monitor the bite area for any signs of infection or rash. "
+      ],
+      "red_flags": [
+        "Difficulty breathing",
+        "A severe headache",
+        "A rash, especially a bullseye-shaped rash",
+        "Fever",
+        "Joint pain",
+        "Muscle aches",
+        "Swelling around the bite area",
+        "Signs of infection at the bite site (increased pain, redness, pus)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    }
+  ]
+}

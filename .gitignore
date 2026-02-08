@@ -1,0 +1,18 @@
+# Dependencies
+frontend/node_modules/
+backend/node_modules/
+
+# Build outputs
+frontend/dist/
+backend/build/
+backend/dist/
+backend/data/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log 
+
