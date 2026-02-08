@@ -200,11 +200,28 @@ function Home() {
 
       {/* White Content Area - seamlessly connected */}
       <div className="flex-1 bg-white flex flex-col relative overflow-hidden rounded-l-3xl ml-[-1.5rem]">
-          {/* Status Indicator */}
+          {/* Status Indicator - reflects actual WebLLM state */}
           <div className="absolute top-4 right-6 pointer-events-none">
-            <div className="flex items-center gap-2 bg-kit-teal-light/60 px-3 py-1.5 rounded-full border border-kit-teal/20">
-              <div className="w-2 h-2 bg-kit-teal rounded-full animate-pulse"></div>
-              <span className="text-xs font-semibold text-kit-teal">Local Mode: Active</span>
+            <div
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border ${
+                status === 'ready'
+                  ? 'bg-kit-teal-light/60 border-kit-teal/20'
+                  : 'bg-gray-100 border-gray-200'
+              }`}
+            >
+              {status === 'ready' ? (
+                <>
+                  <div className="w-2 h-2 bg-kit-teal rounded-full animate-pulse"></div>
+                  <span className="text-xs font-semibold text-kit-teal">Local Mode: Active</span>
+                </>
+              ) : (
+                <>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
+                  <span className="text-xs font-semibold text-gray-600">
+                    Local Mode: {status === 'loading' ? 'Loading...' : 'Initializing...'}
+                  </span>
+                </>
+              )}
             </div>
           </div>
 

@@ -1,6 +1,26 @@
-import { CreateWebWorkerMLCEngine, prebuiltAppConfig } from '@mlc-ai/web-llm'
+import {
+  CreateWebWorkerMLCEngine,
+  prebuiltAppConfig,
+  modelLibURLPrefix,
+  modelVersion,
+} from '@mlc-ai/web-llm'
 
-const DEFAULT_MODEL = 'Llama-3.2-3B-Instruct-q4f32_1-MLC'
+const LLAMA_32_3B_WASM =
+  modelLibURLPrefix + modelVersion + '/Llama-3.2-3B-Instruct-q4f32_1-ctx4k_cs1k-webgpu.wasm'
+
+const CUSTOM_MODEL_URL = import.meta.env.VITE_WEBLLM_MODEL_URL
+const CUSTOM_MODEL_ID = import.meta.env.VITE_WEBLLM_MODEL_ID || 'kit-ai-medical-v1'
+
+const customModelRecord = CUSTOM_MODEL_URL
+  ? {
+      model: CUSTOM_MODEL_URL,
+      model_id: CUSTOM_MODEL_ID,
+      model_lib: LLAMA_32_3B_WASM,
+      overrides: { context_window_size: 4096 },
+    }
+  : null
+
+const DEFAULT_MODEL = customModelRecord ? CUSTOM_MODEL_ID : 'Llama-3.2-3B-Instruct-q4f32_1-MLC'
 
 let engine = null
 let worker = null
@@ -15,11 +35,16 @@ export async function initEngine(modelId = DEFAULT_MODEL, onProgress) {
     { type: 'module' }
   )
 
+  const appConfig = {
+    ...prebuiltAppConfig,
+    useIndexedDBCache: true,
+    model_list: customModelRecord
+      ? [...prebuiltAppConfig.model_list, customModelRecord]
+      : prebuiltAppConfig.model_list,
+  }
+
   const engineConfig = {
-    appConfig: {
-      ...prebuiltAppConfig,
-      useIndexedDBCache: true,
-    },
+    appConfig,
     initProgressCallback: (report) => {
       if (onProgress && report) {
         const progress = report.progress ?? 0
