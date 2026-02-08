@@ -171,7 +171,8 @@ export async function runTraining(jobId: string): Promise<{ learned: number; ski
  * Start a background training job
  */
 export function startTrainingJob(): string {
-  const jobId = jobQueue.addJob("train", async () => {
+  let jobId: string;
+  jobId = jobQueue.addJob("train", async () => {
     return await runTraining(jobId);
   });
   return jobId;

@@ -173,7 +173,8 @@ export async function runTranslation(jobId: string): Promise<{ languages: number
  * Start a background translation job
  */
 export function startTranslationJob(): string {
-  const jobId = jobQueue.addJob("translate", async () => {
+  let jobId: string;
+  jobId = jobQueue.addJob("translate", async () => {
     return await runTranslation(jobId);
   });
   return jobId;
