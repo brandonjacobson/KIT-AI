@@ -1,5 +1,10 @@
-// Backend API URL - calls our secure backend instead of ElevenLabs directly
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001'
+// Backend API URL - calls our secure backend instead of ElevenLabs directly.
+// In production (Vercel), if VITE_BACKEND_URL is not set, TTS gracefully falls back to browser voice.
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (
+  typeof window !== 'undefined' && window.location.hostname === 'localhost'
+    ? 'http://localhost:3001'
+    : ''
+)
 
 /**
  * Check if the browser is online
@@ -87,6 +92,11 @@ export async function textToSpeech(text, voiceId = 'JBFqnCBsd6RMkjVDRZzb', langu
       throw new Error('Cannot generate speech while offline')
     }
 
+    // No backend configured (e.g. Vercel without backend)
+    if (!BACKEND_URL) {
+      throw new Error('TTS backend not configured')
+    }
+
     // Check text length (ElevenLabs has a ~5000 character limit for most tiers)
     if (text.length > 5000) {
       console.warn(`Text length (${text.length}) exceeds recommended limit. May fail or be truncated.`)
@@ -126,6 +136,11 @@ export async function getAvailableVoices() {
       throw new Error('Cannot fetch voices while offline')
     }
 
+    // No backend configured
+    if (!BACKEND_URL) {
+      throw new Error('TTS backend not configured')
+    }
+
     // Fetch voices from backend
     const response = await fetch(`${BACKEND_URL}/api/tts/voices`)
 
@@ -154,7 +169,7 @@ export async function getAvailableVoices() {
  */
 export async function testConnection() {
   try {
-    if (!isOnline()) {
+    if (!isOnline() || !BACKEND_URL) {
       return false
     }
 
