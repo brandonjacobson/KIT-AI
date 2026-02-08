@@ -6,6 +6,7 @@ import routes from "./routes.js";
 import { connectDB, ensureMeta } from "./db.js";
 // @ts-ignore
 import medicalRoutes from "./routes/medical.js";
+import jobRoutes from "./routes/jobs.js";
 
 const app = express();
 const port = process.env.PORT ?? 3001;
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use(routes);
 // Team MongoDB routes
 app.use("/api/medical", medicalRoutes);
+// Background job routes
+app.use("/jobs", jobRoutes);
 
 async function start() {
   try {

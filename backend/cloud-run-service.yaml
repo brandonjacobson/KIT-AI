@@ -1,0 +1,82 @@
+# Cloud Run Configuration
+#
+# This service.yaml file can be used to deploy the backend to Google Cloud Run
+# with background job support.
+#
+# Deploy with: gcloud run services replace service.yaml
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kit-ai-backend
+  labels:
+    cloud.googleapis.com/location: us-central1
+spec:
+  template:
+    metadata:
+      annotations:
+        # Allow up to 60 minutes for background jobs
+        run.googleapis.com/execution-environment: gen2
+        autoscaling.knative.dev/maxScale: '10'
+        autoscaling.knative.dev/minScale: '0'
+    spec:
+      # Allow longer timeout for background jobs
+      timeoutSeconds: 3600
+      containerConcurrency: 80
+      containers:
+      - image: gcr.io/PROJECT_ID/kit-ai-backend:latest
+        ports:
+        - name: http1
+          containerPort: 8080
+        env:
+        - name: PORT
+          value: '8080'
+        - name: NODE_ENV
+          value: production
+        # MongoDB connection (use Secret Manager in production)
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-uri
+              key: latest
+        # Gemini API key (use Secret Manager in production)
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gemini-api-key
+              key: latest
+        # Frontend origin for CORS
+        - name: FRONTEND_ORIGIN
+          value: https://your-frontend-domain.com
+        # Medical API key for write operations
+        - name: MEDICAL_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: medical-api-key
+              key: latest
+        resources:
+          limits:
+            # Adjust based on your needs
+            cpu: '2'
+            memory: 2Gi
+          requests:
+            cpu: '1'
+            memory: 512Mi
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+  traffic:
+  - percent: 100
+    latestRevision: true
