@@ -1,11 +1,12 @@
 import { Router, type Request, type Response } from "express";
 import { validateUpdateSecret } from "./auth.js";
-import { generateGuidelines } from "./gemini.js";
+import { generateGuideline, SUPPORTED_SCENARIOS } from "./gemini.js";
 import {
   getGuidelinesJson,
   getLatest,
   uploadGuidelines,
 } from "./storage.js";
+import type { Guidelines, GuidelineEntry } from "./schema.js";
 
 const router = Router();
 
@@ -51,7 +52,27 @@ router.get("/latest", async (_req: Request, res: Response) => {
 
 router.post("/update", validateUpdateSecret, async (_req: Request, res: Response) => {
   try {
-    const guidelines = await generateGuidelines();
+    const entries: GuidelineEntry[] = [];
+    
+    // Note: This endpoint will time out on Cloud Run if we do the slow loop.
+    // Ideally this should trigger a background task.
+    // For now, we will just generate the first one as a test or change logic later.
+    // Or we assume this is handled by manual-update locally.
+    
+    // Let's implement a faster "batch" attempt here but if it fails it fails.
+    // WARNING: This route is deprecated in favor of manual-update.ts for now.
+    
+    for (const scenario of SUPPORTED_SCENARIOS) {
+         const entry = await generateGuideline(scenario);
+         entries.push(entry);
+    }
+    
+    const guidelines: Guidelines = {
+        version: "1.0.1",
+        updated_at: new Date().toISOString(),
+        guidelines: entries
+    };
+
     const latest = await uploadGuidelines(guidelines);
     res.json(latest);
   } catch (err) {

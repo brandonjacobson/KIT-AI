@@ -1,5 +1,5 @@
 {
-  "name": "kit-ai-updater",
+  "name": "kit-ai-backend",
   "version": "1.0.0",
   "description": "Gemini-powered cloud updater for offline first-aid guidelines",
   "type": "module",
@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsc --watch & node --watch dist/index.js"
+    "dev": "tsc --watch & node --watch dist/index.js",
+    "ingest": "node scripts/ingest-from-json.js",
+    "export-legacy": "node dist/create-compatible-dump.js"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.14.0",
@@ -15,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
+    "mongodb": "^6.10.0",
     "zod": "^3.23.8",
     "zod-to-json-schema": "^3.23.5"
   },

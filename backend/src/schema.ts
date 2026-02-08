@@ -19,8 +19,8 @@ export const guidelinesSchema = z.object({
 export type GuidelineEntry = z.infer<typeof guidelineEntrySchema>;
 export type Guidelines = z.infer<typeof guidelinesSchema>;
 
-export function getGuidelinesJsonSchema(): Record<string, unknown> {
-  return zodToJsonSchema(guidelinesSchema, { $refStrategy: "none" }) as Record<
+export function getGuidelineEntryJsonSchema(): Record<string, unknown> {
+  return zodToJsonSchema(guidelineEntrySchema, { $refStrategy: "none" }) as Record<
     string,
     unknown
   >;

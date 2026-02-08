@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0-offline-fallback",
+  "updated_at": "2026-02-08T01:11:11.183Z",
+  "guidelines": [
+    {
+      "id": "choking",
+      "keywords": [
+        "choking",
+        "can't breathe",
+        "heimlich",
+        "blocked airway"
+      ],
+      "steps": [
+        "Ask the person 'Are you choking?'",
+        "If they can cough effectively, encourage them to keep coughing.",
+        "If they cannot breathe, cough, or speak, give 5 back blows between the shoulder blades.",
+        "If back blows fail, give 5 abdominal thrusts (Heimlich maneuver).",
+        "Alternate between 5 back blows and 5 abdominal thrusts until the object is expelled."
+      ],
+      "red_flags": [
+        "Loss of consciousness",
+        "Blue lips",
+        "Silence/Inability to make sound"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "severe_bleeding",
+      "keywords": [
+        "bleeding",
+        "cut",
+        "wound",
+        "blood",
+        "haemorrhage"
+      ],
+      "steps": [
+        "Call emergency services immediately for severe bleeding.",
+        "Apply direct pressure to the wound with a clean cloth or sterile dressing.",
+        "Maintain pressure until the bleeding stops. Do not remove the cloth if it soaks through; add more layers on top.",
+        "If the wound is on a limb and bleeding is life-threatening, a tourniquet may be considered if trained to do so.",
+        "Keep the person lying down and warm to prevent shock."
+      ],
+      "red_flags": [
+        "Spurting blood",
+        "Bleeding that won't stop",
+        "Signs of shock (pale, cold, clammy skin)"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    },
+    {
+      "id": "unconscious_not_breathing",
+      "keywords": [
+        "unconscious",
+        "not breathing",
+        "cpr",
+        "cardiac arrest",
+        "collapsed"
+      ],
+      "steps": [
+        "Check for a response (shake shoulders and ask 'Are you okay?').",
+        "If unresponsive, check for breathing for no more than 10 seconds.",
+        "If not breathing or only gasping, call emergency services immediately.",
+        "Start CPR: 30 chest compressions (push hard and fast in center of chest).",
+        "Give 2 rescue breaths if trained, otherwise continue with continuous chest compressions.",
+        "Use an AED (defibrillator) as soon as one is available."
+      ],
+      "red_flags": [
+        "No pulse",
+        "No breathing",
+        "Unresponsive"
+      ],
+      "disclaimer": "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."
+    }
+  ]
+}

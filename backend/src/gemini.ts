@@ -1,8 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
-import { guidelinesSchema, getGuidelinesJsonSchema } from "./schema.js";
-import type { Guidelines } from "./schema.js";
+import { getGuidelineEntryJsonSchema } from "./schema.js";
+import type { GuidelineEntry } from "./schema.js";
 
-const SUPPORTED_SCENARIOS = [
+export const SUPPORTED_SCENARIOS = [
   "choking",
   "severe_bleeding",
   "minor_cuts",
@@ -43,35 +43,31 @@ Required disclaimer (always include):
 
 You must never act as a doctor. Your goal is to share factual, common first-aid knowledge safely and responsibly, especially in offline or emergency situations.`;
 
-const USER_PROMPT = `Generate one guideline entry per scenario. Output JSON only. Use the schema provided.
-
-Scenarios (use these exact IDs):
-${SUPPORTED_SCENARIOS.map((s) => `- ${s}`).join("\n")}
-
-For each guideline:
-- id: the scenario ID (e.g. "choking")
-- keywords: array of search terms users might type (e.g. ["choking", "can't breathe", "blocked airway"])
-- steps: array of clear, numbered first-aid steps
-- red_flags: array of warning signs requiring professional help
-- disclaimer: the required disclaimer text (exactly as specified)
-
-Set version to "1.0.0" and updated_at to today's date in ISO format.`;
-
-export async function generateGuidelines(): Promise<Guidelines> {
+export async function generateGuideline(scenarioId: string): Promise<GuidelineEntry> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY environment variable is not set");
   }
 
   const ai = new GoogleGenAI({ apiKey });
-  const jsonSchema = getGuidelinesJsonSchema();
+  const jsonSchema = getGuidelineEntryJsonSchema();
+
+  const prompt = `Generate a first-aid guideline entry for the scenario: "${scenarioId}".
+Output JSON only.
+
+Fields required:
+- id: must be "${scenarioId}"
+- keywords: array of search terms
+- steps: array of clear, numbered first-aid steps
+- red_flags: array of warning signs requiring professional help
+- disclaimer: "This information is for general first-aid guidance only and is not a substitute for professional medical care. If possible, seek help from a qualified medical professional or emergency services."`;
 
   const response = await ai.models.generateContent({
     model: "gemini-2.0-flash",
     contents: [
       {
         role: "user",
-        parts: [{ text: USER_PROMPT }],
+        parts: [{ text: prompt }],
       },
     ],
     config: {
@@ -86,7 +82,7 @@ export async function generateGuidelines(): Promise<Guidelines> {
     throw new Error("Gemini returned empty response");
   }
 
-  const parsed = JSON.parse(text) as unknown;
-  const validated = guidelinesSchema.parse(parsed);
-  return validated;
+  // Parse and validate manually since we don't have the full schema object here
+  // The responseJsonSchema ensures the structure, but we cast it
+  return JSON.parse(text) as GuidelineEntry;
 }

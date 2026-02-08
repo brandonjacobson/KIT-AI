@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['@mlc-ai/web-llm']
+  },
   plugins: [
     react(),
     VitePWA({
@@ -37,8 +40,9 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        navigateFallback: '/index.html'
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,wasm,json}'],
+        navigateFallback: '/index.html',
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024
       }
     })
   ]
