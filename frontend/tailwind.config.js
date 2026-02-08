@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -15,11 +16,22 @@ export default {
           red: '#FF8A8A',           // Pastel coral red
           'red-hover': '#FF7A7A',
           'red-light': '#FFE8E8',   // Very light pink for buttons
+          'red-dark': '#CC6E6E',    // Darker red for dark mode
           teal: '#5CBFB3',          // Turquoise
           'teal-hover': '#4AAFA3',
           'teal-light': '#E0F5F3',  // Light turquoise for buttons
+          'teal-dark': '#4A9F93',   // Darker teal for dark mode
           mint: '#F0F5F8',          // Soft background
           'mint-dark': '#E0EAF0',   // Slightly darker for hover
+
+          // Dark mode colors
+          dark: {
+            bg: '#1A1D23',          // Deep charcoal background
+            'bg-light': '#23272F',  // Lighter charcoal
+            'bg-lighter': '#2C3139', // Even lighter charcoal
+            text: '#E8EAED',        // Soft white text
+            'text-muted': '#A0A4AB', // Muted text
+          },
         },
       },
       borderRadius: {
