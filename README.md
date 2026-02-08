@@ -1,145 +1,170 @@
 # KIT AI
 
-**KIT AI** is an **offline‑first emergency health assistant** designed for situations where internet access is unreliable or unavailable—such as airplanes, hiking trails, or low‑connectivity regions.  
-It provides **objective, widely accepted first‑aid information** using a **locally running AI model**, without requiring network access at the time of use.
+**KIT AI** is an **offline-first emergency health assistant** designed for situations where internet access is unreliable or unavailable—such as airplanes, hiking trails, or low-connectivity regions.  
+It provides **objective, widely accepted first-aid information** using a **locally running AI model**, without requiring network access at the time of use.
 
-> ⚠️ **Disclaimer:** KIT AI is **not a doctor**, does **not diagnose**, and does **not replace professional medical care**. It shares general first‑aid guidance only. In emergencies, seek professional help whenever possible.
+> **Disclaimer:** KIT AI is **not a doctor**, does **not diagnose**, and does **not replace professional medical care**. It shares general first-aid guidance only. In emergencies, seek professional help whenever possible.
 
 ---
 
 ## Why KIT AI Exists
 
-Most AI health tools require constant internet access. In real emergencies, that’s often impossible.
+Most AI health tools require constant internet access. In real emergencies, that's often impossible.
 
 KIT AI is built to:
 - Work **fully offline**
-- Run directly **on the user’s device**
-- Share **clear, factual first‑aid steps**
+- Run directly **on the user's device**
+- Share **clear, factual first-aid steps**
 - Avoid hallucinations, diagnoses, or personalized medical advice
-- Update safely when internet *is* available
+- Update medical content safely when internet *is* available
 
 ---
 
 ## What KIT AI Does
 
-- 🧠 Uses a **local LLM** running entirely on‑device
-- 📦 Stores vetted first‑aid knowledge in a **local cache**
-- 💬 Provides a calm, chat‑style interface for emergencies
-- 🚫 Never prescribes medication or gives diagnoses
-- 🔄 Syncs updated first‑aid guidelines *only when online*
+- Uses a **local LLM** (WebLLM) running entirely on-device via WebGPU
+- Stores vetted first-aid knowledge in **IndexedDB** (syncs from backend when online)
+- Provides a chat-style interface for health questions
+- Never prescribes medication or gives diagnoses
+- Syncs updated medical guidelines *only when online*
 
 ---
 
 ## What KIT AI Does NOT Do
 
-- ❌ No user accounts or logins  
-- ❌ No real‑time cloud AI calls  
-- ❌ No diagnosis or treatment plans  
-- ❌ No medication recommendations or dosages  
-- ❌ No replacement for emergency services  
+- No user accounts or logins
+- No real-time cloud AI calls during inference
+- No diagnosis or treatment plans
+- No medication recommendations or dosages
+- No replacement for emergency services
 
 ---
 
-## Core Design Principles
+## Architecture
 
-### Offline‑First
-Everything required to function—UI, AI model, and medical content—is downloaded once and stored locally.
-
-### Safety‑Constrained AI
-The AI model is strictly limited to:
-1. Understanding the user’s question  
-2. Selecting relevant, vetted first‑aid content  
-3. Rephrasing that content clearly  
-
-It **cannot invent medical advice**.
-
-### Objective Information Only
-All guidance is based on **commonly accepted, non‑controversial first‑aid practices**.
-
----
-
-## High‑Level Architecture
-
-### Client (Offline)
-- Progressive Web App (PWA)
-- Runs in the browser
-- Cached via service worker
-- Uses IndexedDB for:
-  - LLM model weights
-  - First‑aid knowledge base
+### Frontend (PWA)
+- React + Vite
+- Progressive Web App with service worker
+- IndexedDB for:
+  - LLM model weights (WebLLM cache)
+  - Medical knowledge (synced from backend when online)
 
 ### Local AI
-- Runs via **WebGPU / WASM**
-- No network access required
-- Used for intent understanding + paraphrasing only
+- `@mlc-ai/web-llm` in a Web Worker
+- WebGPU / WASM inference
+- Model: Llama-3.2-3B-Instruct (configurable)
 
-### Cloud (Optional, Online‑Only)
-- Used **only to update medical content**
-- Powered by a Gemini‑based updater
-- Produces versioned, structured knowledge files
-- Never interacts directly with end users
+### Backend (Online Only)
+- Node.js + Express
+- MongoDB Atlas for medical content
+- `GET /api/medical` — frontend fetches and caches when online
+- `POST /api/medical` — webscraper or ingest script updates content
 
 ---
 
 ## Tech Stack
 
+| Layer | Technologies |
+|-------|--------------|
+| Frontend | React, Vite, Tailwind CSS, PWA |
+| Local AI | @mlc-ai/web-llm, WebGPU |
+| Backend | Node.js, Express, MongoDB |
+| Storage | IndexedDB (frontend), MongoDB Atlas (backend) |
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- MongoDB Atlas account (or local MongoDB)
+- Browser with WebGPU (Chrome 113+, Edge 113+, Safari 26+, Firefox 141+)
+
+### Backend
+
+```bash
+cd backend
+cp .env.example .env
+# Edit .env with your MONGODB_URI, PORT, FRONTEND_ORIGIN
+npm install
+npm run dev
+```
+
+Ingest initial medical content (with backend running):
+
+```bash
+npm run ingest
+# Or: npm run ingest path/to/medical-knowledge.json
+```
+
 ### Frontend
-- React
-- Vite
-- Progressive Web App (PWA)
-- Service Workers
-- IndexedDB
 
-### Offline AI
-- `@mlc-ai/web-llm`
-- WebGPU / WASM‑based inference
-- Quantized local LLM models
+```bash
+cd frontend
+cp .env.example .env
+# For API mode: set VITE_MEDICAL_SOURCE=api and VITE_MEDICAL_API_URL
+npm install
+npm run dev
+```
 
-### Medical Knowledge
-- Versioned JSON files
-- Cached locally
-- Strict schema with:
-  - Steps
-  - Red flags
-  - Disclaimers
-  - Keywords
+Visit `http://localhost:5173`. On first load (while online), the model downloads and medical content syncs. After that, the app works offline.
 
-### Cloud Updates
-- Google Cloud Run
-- Gemini API
-- Cloud Storage
-- Cloud Scheduler
-- Secret Manager
+---
+
+## Configuration
+
+### Frontend (`.env`)
+| Variable | Description |
+|----------|-------------|
+| `VITE_MEDICAL_SOURCE` | `api` or `static` |
+| `VITE_MEDICAL_API_URL` | Backend URL, e.g. `http://localhost:3001/api/medical` |
+
+### Backend (`.env`)
+| Variable | Description |
+|----------|-------------|
+| `MONGODB_URI` | MongoDB Atlas connection string |
+| `PORT` | Server port (default 3001) |
+| `FRONTEND_ORIGIN` | CORS origin (default `http://localhost:5173`) |
+| `MEDICAL_API_KEY` | Optional; required for POST /api/medical when set |
+
+---
+
+## Medical Content Format
+
+```json
+{
+  "version": 1,
+  "entries": [
+    { "id": "topic-id", "content": "Medical content..." }
+  ]
+}
+```
+
+The webscraper outputs this format. Use `npm run ingest` in the backend to push it to MongoDB.
 
 ---
 
 ## Example Use Cases
 
-- ✈️ In‑flight medical situations  
-- 🏕️ Hiking or camping emergencies  
-- 🌍 Regions with limited internet access  
-- 📴 Disaster or outage scenarios  
+- In-flight medical situations
+- Hiking or camping emergencies
+- Regions with limited internet access
+- Disaster or outage scenarios
 
 ---
 
 ## Ethics & Safety
 
-KIT AI is intentionally designed to be **conservative**:
-- When uncertain, it escalates to **“seek professional help”**
+KIT AI is intentionally **conservative**:
+- When uncertain, it escalates to "seek professional help"
 - It avoids personalized or speculative advice
-- It prioritizes **clarity, calmness, and safety**
+- It prioritizes clarity, calmness, and safety
 
 ---
 
 ## Project Status
 
-This project was built as a **hackathon prototype**, focused on:
-- Real‑world usability
-- Responsible AI design
-- Offline‑capable architecture
-
----
-
-## One‑Sentence Summary
-
-> **KIT AI is an offline, safety‑constrained AI assistant that delivers factual first‑aid guidance when the internet isn’t available.**
+Active development. Current features:
+- WebLLM-based offline chat
+- Medical knowledge cache with backend sync
+- PWA with IndexedDB caching
