@@ -505,7 +505,14 @@ function Home() {
                   <div className="w-20 h-20 bg-kit-teal-light dark:bg-kit-teal-dark/20 rounded-full flex items-center justify-center mb-6 transition-colors duration-300">
                     <div className="w-10 h-10 border-4 border-kit-teal dark:border-kit-teal border-t-transparent rounded-full animate-spin"></div>
                   </div>
-                  <p className="text-gray-700 dark:text-kit-dark-text mb-4 text-base md:text-lg font-semibold transition-colors duration-300">{t('loadingModelProgress')}</p>
+                  <p className="text-gray-700 dark:text-kit-dark-text mb-2 text-base md:text-lg font-semibold transition-colors duration-300">
+                    {progress < 5 ? t('loadingModelProgress') : t('loadingModelProgress')}
+                  </p>
+                  <p className="text-xs text-gray-400 dark:text-kit-dark-text-muted mb-4 max-w-xs text-center transition-colors duration-300">
+                    {progress < 5
+                      ? 'Preparing the AI model for first use...'
+                      : 'Downloading AI model. This only happens once and will be cached for future visits.'}
+                  </p>
                   <div className="w-full max-w-xs h-3 bg-gray-200 dark:bg-kit-dark-bg-lighter rounded-full overflow-hidden transition-colors duration-300">
                     <div
                       className="h-full bg-kit-teal dark:bg-kit-teal rounded-full transition-all duration-300"

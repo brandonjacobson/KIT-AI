@@ -20,7 +20,7 @@ const customModelRecord = CUSTOM_MODEL_URL
     }
   : null
 
-const DEFAULT_MODEL = customModelRecord ? CUSTOM_MODEL_ID : 'Llama-3.2-3B-Instruct-q4f32_1-MLC'
+const DEFAULT_MODEL = customModelRecord ? CUSTOM_MODEL_ID : 'Llama-3.2-1B-Instruct-q4f16_1-MLC'
 
 let engine = null
 let worker = null
