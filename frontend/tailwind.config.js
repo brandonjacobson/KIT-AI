@@ -6,16 +6,26 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Nunito', 'Varela Round', 'system-ui', 'sans-serif'],
+      },
       colors: {
-        // Kit.ai Medical Theme - Soft Pastels
+        // Kit.ai Medical Theme - Pastel & Soft
         kit: {
-          red: '#FF7B7B',
-          'red-hover': '#FF6B6B',
-          'red-light': '#FFE8E8',
-          teal: '#5DCCBB',
-          'teal-hover': '#4DB8A8',
-          'teal-light': '#D4F5F0',
+          red: '#FF8A8A',           // Pastel coral red
+          'red-hover': '#FF7A7A',
+          'red-light': '#FFE8E8',   // Very light pink for buttons
+          teal: '#5CBFB3',          // Turquoise
+          'teal-hover': '#4AAFA3',
+          'teal-light': '#E0F5F3',  // Light turquoise for buttons
+          mint: '#F0F5F8',          // Soft background
+          'mint-dark': '#E0EAF0',   // Slightly darker for hover
         },
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+        '4xl': '2rem',
       },
       backdropBlur: {
         'xs': '2px',
